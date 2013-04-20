@@ -14,9 +14,9 @@ The screen will constantly be moving to right, to simulate that you are always _
 However, you are able to control the speed at which you running (faster or slower) while you are still in the screen.
 If you stop using your controls, your character will "run in place" from where you left the character.
 Your **life** will be determined by your **battery life.** The game **ends** when you are at **0%.**
-> Example: Being at 5% battery life is the equivalent of you having 5 "hearts" or "lives."
+> Example: Being at 5% battery life is the equivalent of you having 5 "hearts" or "lives." When you lose a life, you will be "dropped" back into the game, with the same score.
 You will **play** the game using your **keyboard arrow keys.**
-> Up is Jump, Down is duck, left is run slower, right is run faster.
+> Up is Jump, Down is duck, left is run slower, right is run faster. You can also hit "p" to pause/go to the menu.
 The **score** will automatically keep increasing. The **longer** you are playing, the **faster** your score increases. You cannot lose points.
 
 
