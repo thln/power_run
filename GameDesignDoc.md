@@ -1,13 +1,40 @@
 # Programming Assignment 5 - Power Run
 ----
 
-##Overview
+## Overview
 We've all been there.
 You are using your laptop in the living room when you a popup notifies you that your laptop's battery life is low.
 The whole premise of the game is that you are trying to run to your laptop charger before your laptop dies.
 Along the way, you will run in many obstacles that may slow you down and stop you from reaching your goal.
-This is an endless running game - very similar to something like Temple Run or Doodle Jump.
+This is an **endless running game** - very similar to something like Temple Run or Doodle Jump.
+I also plan on (hopefully) making this game into an 8 bit, arcade sort of feel.
 
+##General Game Mechanics
+The screen will constantly be moving to right, to simulate that you are always _running._
+However, you are able to control the speed at which you running (faster or slower) while you are still in the screen.
+If you stop using your controls, your character will "run in place" from where you left the character.
+Your **life** will be determined by your **battery life.** The game **ends** when you are at **0%.**
+> Example: Being at 5% battery life is the equivalent of you having 5 "hearts" or "lives."
+You will **play** the game using your **keyboard arrow keys.**
+> Up is Jump, Down is duck, left is run slower, right is run faster.
+The **score** will automatically keep increasing. The **longer** you are playing, the **faster** your score increases. You cannot lose points.
+
+
+## The 5 Different Items
+##### 1. Your Dog
+> Your dog will randomly appear from behind you, chase you, and bark. If your dog catches you, you will be distracted and thus want to pet it, causing you to lose a "life." 
+
+##### 2. Your Mom
+> Your mom will randomly appear on screen moving back and forth, calling for your name. If you run into your mom, your mom will demand you do a chore, causing you to lose a "life."
+
+##### 3. Doors
+> Your sister likes tends to forget a lot of stuff, so she will randomly open and close doors while she searches for her items in the background. If you run into an open door, you will hurt yourself, causing you to lose a "life."
+
+##### 4. Your Dad
+> Your dad will randomly be running towards you carrying a tv over his head. He's not trying to find you, but if you don't duck, you will hit the TV, and you will lose a "life."
+
+##### 5. Desks, tables, bookcases, etc.
+> You will be trying to avoid many obstacles, so you can try to jump onto or off one of these **stationary** items. You can only run on them for 1.5 seconds, and they will break after you jump off.
 
 
 
