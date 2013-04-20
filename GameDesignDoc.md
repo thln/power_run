@@ -1,3 +1,20 @@
+# Programming Assignment 5 - Power Run
+----
+
+##Overview
+We've all been there.
+You are using your laptop in the living room when you a popup notifies you that your laptop's battery life is low.
+The whole premise of the game is that you are trying to run to your laptop charger before your laptop dies.
+Along the way, you will run in many obstacles that may slow you down and stop you from reaching your goal.
+This is an endless running game - very similar to something like Temple Run or Doodle Jump.
+
+
+
+
+----
+----
+----
+
 # Game Design Document
 This is a place holder for your game design document. You are advised to write your document in [Markdown](http://daringfireball.net/projects/markdown/) and the following section will show you how to write a document using Markdown markup.
 
