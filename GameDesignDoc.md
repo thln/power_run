@@ -1,4 +1,4 @@
-# Programming Assignment 5 - Power Run
+# Programming Assignment 5 - Power Run!
 ----
 
 ## Overview
@@ -38,6 +38,8 @@ The **score** will automatically keep increasing. The **longer** you are playing
 
 
 
+## Example Gameplay Screen
+![alt text](http://i229.photobucket.com/albums/ee242/AsadaAsada/b5e026b8-b6f2-458a-8f2c-6b364513d39c_zps0a707ac5.jpg "Power Run!")
 ----
 ----
 ----
