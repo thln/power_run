@@ -18,7 +18,7 @@ class MainPlayer : public QGraphicsPixmapItem {
 		~MainPlayer();
 		void setVelocity(double x, double y);
 //		void KeyPressEvent(QKeyEvent *e);
-//		void move();
+		void move(int x, int y);
 	
 	private:
 		GraphicsWindow *parent;
@@ -27,8 +27,8 @@ class MainPlayer : public QGraphicsPixmapItem {
 		double velocityX;
 		double velocityY;
 //		QKeyevent *e;
-//		double positionX;
-//		double positionY;
+		double positionX;
+		double positionY;
 
 	public slots:
 

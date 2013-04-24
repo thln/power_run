@@ -38,7 +38,7 @@ protected:
 private:
 //	QDockWidget *lqdw; /** Left Doct Widget */
 //	formlayout *textfields; /** A formlayout to take text from */
-//	QToolBar *tool; /** A toolbar */
+	QToolBar *tool; /** A toolbar */
 	GraphicsWindow *gw; /** Your graphics Window */
 //	QRadioButton *mhChoice; /** Radio button choice for manhattan heuristic */
 //	QRadioButton *ooohChoice; /** Radio button choice for out of order heuristic */

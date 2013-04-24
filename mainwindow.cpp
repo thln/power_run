@@ -25,7 +25,7 @@ MainWindow::MainWindow()
 	//MainPlayer *Player1 = new MainPlayer(gw, name);	
 	//gw->getScene()->addItem(Player1);
 
-/*
+
 //---------------------------------------------------------------
 //Toolbar
 	tool = new QToolBar;
@@ -35,14 +35,15 @@ MainWindow::MainWindow()
 	tool->addAction( startGameAction );
 	connect( startGameAction, SIGNAL(triggered() ), this, SLOT(startGame() ));
 
-	QAction *cheatGameAction = new QAction(tr("&Cheat Game"), this);
-	tool->addAction( cheatGameAction );
-	connect( cheatGameAction, SIGNAL(triggered() ), this, SLOT( cheatGame() ));
+//	QAction *cheatGameAction = new QAction(tr("&Cheat Game"), this);
+//	tool->addAction( cheatGameAction );
+//	connect( cheatGameAction, SIGNAL(triggered() ), this, SLOT( cheatGame() ));
 
 	QAction *quitGameAction = new QAction(tr("&Quit Game"), this);
 	tool->addAction( quitGameAction );
 	connect( quitGameAction, SIGNAL(triggered() ), this, SLOT(quitGame() ));
 
+/*
 //---------------------------------------------------------------
 //Radio Buttons between Heuristics
 	mhChoice = new QRadioButton(tr("&Manhattan Heuristic"), this);
@@ -100,13 +101,33 @@ MainWindow::~MainWindow()
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
+//	int index;
 	switch(e->key()) {
-		case Qt::Key_Left : ;
+		case Qt::Key_Left :
 			//Left Arrow Key pushed
-		case Qt::Key_Right : ;
+			//while(e->key() == Qt::Key_Left)
+			//{
+			//	if(index%50 == 0)
+			//	{
+				gw->getPlayer()->move(-1,0);
+			//	}
+			//index++;
+			//}
+			 ;
+		case Qt::Key_Right :
 			//Right Arrow Key pushed
+			//while(e->key() == Qt::Key_Right)
+			//{
+			//	if(index%50 == 0)
+			//	{
+				gw->getPlayer()->move(1,0);
+			//	}
+			//index++;
+			//}
+			 ;
 		case Qt::Key_Up : ;
 			//Up Arrow Key pushed
+				
 		case Qt::Key_Down : ;
 			//Down Arrow Key pushed
 	};

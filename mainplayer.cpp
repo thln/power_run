@@ -13,9 +13,11 @@ MainPlayer::MainPlayer(GraphicsWindow *p, string name)
 	parent = p;
 	name_ = name;
 
-	pic = new QPixmap("&:/images/mainplayerimage.png");
+	pic = new QPixmap("mainplayerimage.png");
 	setPixmap(*pic);
-	setPos(100, 100);
+	positionX = 100;
+	positionY = 240;
+	setPos(100, 240);
 }
 
 MainPlayer::~MainPlayer()
@@ -27,4 +29,13 @@ void MainPlayer::setVelocity(double x, double y)
 {
 	velocityX = x;
 	velocityY = y;
+}
+
+void MainPlayer::move(int x, int y)
+{
+	velocityX = x;
+	velocityY = y;
+	positionX += velocityX;
+	positionY += velocityY;
+	setPos(positionX, positionY);
 }
