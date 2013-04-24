@@ -9,7 +9,7 @@
 #include <QWidget>
 #include <QString>
 #include <math.h>
-#include "board.h"
+//#include "board.h"
 
 using namespace std;
 
@@ -20,6 +20,10 @@ MainWindow::MainWindow()
 	setCentralWidget(gw);
 	setFocus();
 
+	string name = "Henry";
+	gw->setPlayer(name);
+	//MainPlayer *Player1 = new MainPlayer(gw, name);	
+	//gw->getScene()->addItem(Player1);
 
 /*
 //---------------------------------------------------------------
@@ -96,6 +100,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
+	switch(e->key()) {
+		case Qt::Key_Left : ;
+			//Left Arrow Key pushed
+		case Qt::Key_Right : ;
+			//Right Arrow Key pushed
+		case Qt::Key_Up : ;
+			//Up Arrow Key pushed
+		case Qt::Key_Down : ;
+			//Down Arrow Key pushed
+	};
 
 }
 

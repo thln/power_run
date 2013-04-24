@@ -27,7 +27,7 @@ GraphicsWindow::GraphicsWindow()  {
     //We need a scene and a view to do graphics in QT
     scene = new QGraphicsScene();
     setScene(scene);
-    setSceneRect(0, 0, 1366, 768);
+    setSceneRect(0, 0, 640, 480);
     setWindowTitle( "Programming Assignment #5: Power Run!");
     //view = new QGraphicsView( scene );
 
@@ -57,6 +57,17 @@ void GraphicsWindow::show() {
 QGraphicsScene *GraphicsWindow::getScene()
 {
 	return scene;
+}
+
+void GraphicsWindow::setPlayer(string name)
+{
+	Player1 = new MainPlayer(this, name);
+	scene->addItem(Player1);
+}
+
+MainPlayer *GraphicsWindow::getPlayer()
+{
+	return Player1;
 }
 
 /** Destructor */

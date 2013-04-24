@@ -1,26 +1,32 @@
 #ifndef MAINPLAYER_H
 #define MAINPLAYER_H
-#include <String>
+#include <string>
+#include "graphicswindow.h"
+#include <QPixmap>
+#include <QGraphicsPixmapItem>
 
 using namespace std;
 
-class MainPlayer {
-	Q_OBJECT
+class GraphicsWindow;
+
+class MainPlayer : public QGraphicsPixmapItem {
+//	Q_OBJECT
 
 	public:
 		MainPlayer();
 		MainPlayer(GraphicsWindow *p, string name);
 		~MainPlayer();
+		void setVelocity(double x, double y);
 //		void KeyPressEvent(QKeyEvent *e);
 //		void move();
 	
 	private:
 		GraphicsWindow *parent;
-		QPixMap *pic;
+		QPixmap *pic;
 		string name_;
 		double velocityX;
 		double velocityY;
-		QKeyevent *e;
+//		QKeyevent *e;
 //		double positionX;
 //		double positionY;
 

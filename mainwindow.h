@@ -13,6 +13,7 @@
 #include <QHBoxLayout>
 #include <QPlainTextEdit>
 #include <QGraphicsRectItem>
+#include "mainplayer.h"
 //#include "puzzle_solver.h"
 //#include "puzzle_heur.h"
 

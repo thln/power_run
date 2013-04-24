@@ -16,6 +16,7 @@
 #include <QLabel>
 #include <QGraphicsRectItem>
 #include <QMessageBox>
+#include "mainplayer.h"
 
 using namespace std;
 
@@ -24,7 +25,7 @@ using namespace std;
 	* Inherits from QGraphicsView.
 	* @author Tam Henry Le Nguyen */
 
-class GUITile;
+class MainPlayer;
 
 class GraphicsWindow : public QGraphicsView {
     Q_OBJECT
@@ -33,12 +34,16 @@ public:
     explicit GraphicsWindow(); /** Constructor */
     ~GraphicsWindow(); /** Destructor */
 	QGraphicsScene *getScene(); /** Scene Accessor*/
+	void setPlayer(string name);
+	MainPlayer *getPlayer();
   	void show(); /** shows the scene*/
     
 private:
     QGraphicsScene *scene; /** What is being displayed */
     QGraphicsView *view; /** What is being displayed */
     QTimer *timer; /** A Timer */ 
+    
+    MainPlayer *Player1;
 
    	QPushButton *buttonclick; /** Nothing */
    	int counter; /** Nothing */
