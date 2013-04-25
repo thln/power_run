@@ -19,6 +19,8 @@ MainPlayer::MainPlayer(GraphicsWindow *p, string name)
 	positionX = 100;
 	positionY = 300;
 	setPos(100, 300);
+
+	velocityY = -10;
 	
 	timer = new QTimer();
 	timer->setInterval(1);

@@ -116,7 +116,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			 break;
 		case Qt::Key_Up : 
 			//Up Arrow Key pushed
-				gw->getPlayer()->setVelocityY(-10);
+				//gw->getPlayer()->setVelocityY(-10);
 				gw->getPlayer()->jump();
 			break;		
 		case Qt::Key_Down : 
