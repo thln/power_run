@@ -17,6 +17,8 @@ using namespace std;
 MainWindow::MainWindow()
 {
 	gw = new GraphicsWindow;
+	gw->setBackgroundBrush(QImage("testbackground.png"));
+	gw->setCacheMode(QGraphicsView::CacheBackground);
 	setCentralWidget(gw);
 	setFocus();
 
@@ -43,6 +45,7 @@ MainWindow::MainWindow()
 	tool->addAction( quitGameAction );
 	connect( quitGameAction, SIGNAL(triggered() ), this, SLOT(quitGame() ));
 
+	tool->show();
 /*
 //---------------------------------------------------------------
 //Radio Buttons between Heuristics
@@ -105,31 +108,20 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 	switch(e->key()) {
 		case Qt::Key_Left :
 			//Left Arrow Key pushed
-			//while(e->key() == Qt::Key_Left)
-			//{
-			//	if(index%50 == 0)
-			//	{
-				gw->getPlayer()->move(-1,0);
-			//	}
-			//index++;
-			//}
-			 ;
+				gw->getPlayer()->move(-5,0);
+			 break;
 		case Qt::Key_Right :
 			//Right Arrow Key pushed
-			//while(e->key() == Qt::Key_Right)
-			//{
-			//	if(index%50 == 0)
-			//	{
-				gw->getPlayer()->move(1,0);
-			//	}
-			//index++;
-			//}
-			 ;
-		case Qt::Key_Up : ;
+				gw->getPlayer()->move(5,0);
+			 break;
+		case Qt::Key_Up : 
 			//Up Arrow Key pushed
-				
-		case Qt::Key_Down : ;
+				gw->getPlayer()->setVelocityY(-10);
+				gw->getPlayer()->jump();
+			break;		
+		case Qt::Key_Down : 
 			//Down Arrow Key pushed
+			break;
 	};
 
 }
@@ -137,6 +129,13 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 /** Slot to start game */
 void MainWindow::startGame()
 {
+
+
+//	setFocus();
+
+//	string name = "Henry";
+//	gw->setPlayer(name);
+
 
 /*
 //Takes inputs from lineedits and store them in respective values

@@ -14,6 +14,11 @@
 #include <QPlainTextEdit>
 #include <QGraphicsRectItem>
 #include "mainplayer.h"
+#include <QToolBar>
+#include <QAction>
+#include <QWidget>
+#include <QDockWidget>
+
 //#include "puzzle_solver.h"
 //#include "puzzle_heur.h"
 
