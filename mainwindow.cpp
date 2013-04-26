@@ -137,11 +137,15 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 /** Slot to start game */
 void MainWindow::startGame()
 {
+	cout << "Error?" << endl;
+
 //	if(gw->getPlayer() != NULL)
 //	{
 		gw->deletePlayer();
 //	}
 
+
+	cout << "Error?" << endl;
 
 	this->setFocus();
 

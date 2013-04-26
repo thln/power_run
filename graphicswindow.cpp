@@ -67,12 +67,13 @@ void GraphicsWindow::setPlayer(string name)
 
 void GraphicsWindow::deletePlayer()
 {
+		cout << "hi " << endl;
 	if(Player1 != NULL)
 	{
-//		cout << "hi " << endl;
+		cout << "restarting" << endl;
 		delete Player1;
-//		MainPlayer *Player1;
 	}
+		cout << "hi " << endl;
 }
 
 MainPlayer *GraphicsWindow::getPlayer()
@@ -84,14 +85,22 @@ MainPlayer *GraphicsWindow::getPlayer()
 GraphicsWindow::~GraphicsWindow()
 {
     timer->stop();
+    delete Player1;
     delete timer;
     delete scene;
 }
 
 void GraphicsWindow::startgame()
 {
-index = 0;
-	MyThings[index] = new Mother;
-	MyThings[index]->move();
+	cout << "Error?" << endl;
+	index = 0;
+	test = new Mother;
+	MyThings.push_back(test);
+//	MyThings[index] = test;
+	scene->addItem(MyThings[index]);
+//	MyThings[index]->move();
 
+	cout << "Error?" << endl;
+
+//	return;
 }

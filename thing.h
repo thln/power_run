@@ -1,8 +1,10 @@
 #ifndef THING_H
 #define THING_H
 #include <QGraphicsPixmapItem>
+#include <QObject>
 
-class Thing: public QGraphicsPixmapItem {
+class Thing: public QObject, public QGraphicsPixmapItem {
+	Q_OBJECT
 
 	public:
 //		Thing(QPixmap *p, int nx, int ny);

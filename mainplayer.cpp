@@ -22,6 +22,7 @@ MainPlayer::MainPlayer(GraphicsWindow *p, string name)
 	floor = 300;
 
 	jumping = false;
+	isAlive = true;
 	//velocityY = -10;
 	
 	timer = new QTimer();
@@ -82,6 +83,11 @@ void MainPlayer::move(int x, int y)
 void MainPlayer::setVelocityY(double y)
 {
 	velocityY = y;
+}
+
+string MainPlayer::getName()
+{
+	return name_;
 }
 
 void MainPlayer::jump()

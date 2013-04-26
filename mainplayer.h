@@ -5,6 +5,7 @@
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
 #include <iostream>
+#include <QTimer>
 
 using namespace std;
 
@@ -24,6 +25,8 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		void movejump();
 		bool jumping;
 		void jumpCheck();
+		string getName();
+		bool isAlive;
 	
 	private:
 		GraphicsWindow *parent;

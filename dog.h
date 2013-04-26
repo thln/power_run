@@ -1,17 +1,17 @@
-#ifndef MOTHER_H
-#define MOTHER_H
+#ifndef DOG_H
+#define DOG_H
 
 #include "thing.h"
 #include <QObject>
 #include <QTimer>
 
-class Mother : public Thing {
+class Dog : public Thing {
 	Q_OBJECT
 
 	public:
-		Mother();
-		Mother(QPixmap *p, int nx, int ny);
-		~Mother();
+		Dog();
+		Dog(QPixmap *p, int nx, int ny);
+		~Dog();
 		void go();
 		bool left;
 	

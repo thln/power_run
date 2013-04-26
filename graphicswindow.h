@@ -48,6 +48,7 @@ private:
     QTimer *timer; /** A Timer */ 
     
     MainPlayer *Player1;
+    	Mother *test;
     vector<Thing*> MyThings;
 
    	QPushButton *buttonclick; /** Nothing */

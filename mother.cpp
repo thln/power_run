@@ -4,10 +4,10 @@ using namespace std;
 
 Mother::Mother()
 {
-	pixmap1 = new QPixmap("testmom1.png");
-	pixmap2 = new QPixmap("testmom2.png");
-	setPixmap(*pixmap1);
-	x = 600;
+	pixMap1 = new QPixmap("testmom1.png");
+	pixMap2 = new QPixmap("testmom2.png");
+	setPixmap(*pixMap1);
+	x = 550;
 	y = 300;
 	setPos(x, y);
 	left = true;
@@ -40,7 +40,7 @@ void Mother::move()
 //{
 	if(left)
 	{
-	setPixmap(*pixmap2);
+	setPixmap(*pixMap2);
 		vX = -1;
 		vY = 0;
 		x += vX;
@@ -49,7 +49,7 @@ void Mother::move()
 	}
 	else if(!left)
 	{
-	setPixmap(*pixmap1);
+	setPixmap(*pixMap1);
 		vX = -1;
 		vY = 0;
 		x += vX;
