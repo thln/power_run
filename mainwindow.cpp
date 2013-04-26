@@ -20,12 +20,10 @@ MainWindow::MainWindow()
 	gw->setBackgroundBrush(QImage("testbackground.png"));
 	gw->setCacheMode(QGraphicsView::CacheBackground);
 	setCentralWidget(gw);
-	setFocus();
+	//setFocus();
 
-	string name = "Henry";
-	gw->setPlayer(name);
-	//MainPlayer *Player1 = new MainPlayer(gw, name);	
-	//gw->getScene()->addItem(Player1);
+	//string name = "Henry";
+	//gw->setPlayer(name);
 
 
 //---------------------------------------------------------------
@@ -108,11 +106,17 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 	switch(e->key()) {
 		case Qt::Key_Left :
 			//Left Arrow Key pushed
+			if(!gw->getPlayer()->jumping)
+			{
 				gw->getPlayer()->move(-5,0);
+			 }
 			 break;
 		case Qt::Key_Right :
 			//Right Arrow Key pushed
+			if(!gw->getPlayer()->jumping)
+			{
 				gw->getPlayer()->move(5,0);
+			}
 			 break;
 		case Qt::Key_Up : 
 			//Up Arrow Key pushed
@@ -127,18 +131,22 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Down Arrow Key pushed
 			break;
 	};
-
+//	gw->getPlayer()->jumpCheck();
 }
 
 /** Slot to start game */
 void MainWindow::startGame()
 {
+//	if(gw->getPlayer() != NULL)
+//	{
+		gw->deletePlayer();
+//	}
 
 
-//	setFocus();
+	this->setFocus();
 
-//	string name = "Henry";
-//	gw->setPlayer(name);
+	string name = "Henry";
+	gw->setPlayer(name);
 
 
 /*

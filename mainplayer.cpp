@@ -21,10 +21,11 @@ MainPlayer::MainPlayer(GraphicsWindow *p, string name)
 	setPos(100, 300);
 	floor = 300;
 
+	jumping = false;
 	//velocityY = -10;
 	
 	timer = new QTimer();
-	timer->setInterval(50);
+	timer->setInterval(25);
 	connect(timer, SIGNAL(timeout()), this, SLOT(jump()));
 }
 
@@ -44,11 +45,23 @@ void MainPlayer::movejump()
 	timer->start();
 }
 
+void MainPlayer::jumpCheck()
+{
+if(positionY == floor)
+{
+	jumping = false;
+//	cout << "LALA" << endl;
+	timer->stop();
+}
+}
+
 void MainPlayer::move(int x, int y)
 {
 //	std::cout << x << std::endl;
 	if( ((positionX < 0) && x<0) || ((positionX > 600) && x>1) )
 	{
+//		velocityX= -velocityX;
+//		velocityY= -velocityY;
 		return;
 	}	
 		velocityX = x;
@@ -78,6 +91,8 @@ jumping = true;
 //why doesn't jump work?
 	if( (positionX < 0) || (positionX > 600) )
 	{
+//		velocityX= -velocityX;
+//		velocityY= -velocityY;
 		return;
 	}
 
@@ -100,7 +115,7 @@ jumping = true;
 //}
 //	velocityY = -10;
 //	}
-	counter++;	
+//	counter++;	
 //}while(positionY != floor);
 if(positionY == floor)
 {

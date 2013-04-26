@@ -17,6 +17,7 @@
 #include <QGraphicsRectItem>
 #include <QMessageBox>
 #include "mainplayer.h"
+#include "thing.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ public:
 	QGraphicsScene *getScene(); /** Scene Accessor*/
 	void setPlayer(string name);
 	MainPlayer *getPlayer();
+	void deletePlayer();
   	void show(); /** shows the scene*/
     
 private:
@@ -44,6 +46,7 @@ private:
     QTimer *timer; /** A Timer */ 
     
     MainPlayer *Player1;
+    vector<Thing*> MyThings;
 
    	QPushButton *buttonclick; /** Nothing */
    	int counter; /** Nothing */

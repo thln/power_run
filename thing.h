@@ -5,7 +5,7 @@
 class Thing: public QGraphicsPixmapItem {
 
 	public:
-		Thing(QPixmap *p, int nx, int ny);
+//		Thing(QPixmap *p, int nx, int ny);
 		virtual void move() = 0;
 		
 	private:
@@ -16,13 +16,14 @@ class Thing: public QGraphicsPixmapItem {
 		QPixmap *pixMap;
 
 };
-
+/*
 Thing::Thing(QPixmap *p, int nx, int ny)
 {
 	pixMap = p;
 	x = nx;
 	y = ny;
-	setPost( x, y );
+	setPos( x, y );
 }
+*/
 
 #endif

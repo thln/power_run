@@ -23,6 +23,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		void move(int x, int y);
 		void movejump();
 		bool jumping;
+		void jumpCheck();
 	
 	private:
 		GraphicsWindow *parent;
@@ -36,7 +37,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		double accelX;
 		double accelY;
 		QTimer *timer;
-		int counter;
+//		int counter;
 		double floor;
 
 	public slots:

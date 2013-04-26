@@ -65,6 +65,16 @@ void GraphicsWindow::setPlayer(string name)
 	scene->addItem(Player1);
 }
 
+void GraphicsWindow::deletePlayer()
+{
+	if(Player1 != NULL)
+	{
+//		cout << "hi " << endl;
+		delete Player1;
+//		MainPlayer *Player1;
+	}
+}
+
 MainPlayer *GraphicsWindow::getPlayer()
 {
 	return Player1;
