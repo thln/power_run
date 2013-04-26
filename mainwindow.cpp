@@ -147,7 +147,7 @@ void MainWindow::startGame()
 
 	string name = "Henry";
 	gw->setPlayer(name);
-
+	gw->startgame();
 
 /*
 //Takes inputs from lineedits and store them in respective values

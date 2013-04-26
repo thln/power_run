@@ -88,3 +88,10 @@ GraphicsWindow::~GraphicsWindow()
     delete scene;
 }
 
+void GraphicsWindow::startgame()
+{
+index = 0;
+	MyThings[index] = new Mother;
+	MyThings[index]->move();
+
+}

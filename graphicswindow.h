@@ -18,6 +18,7 @@
 #include <QMessageBox>
 #include "mainplayer.h"
 #include "thing.h"
+#include "mother.h"
 
 using namespace std;
 
@@ -39,6 +40,7 @@ public:
 	MainPlayer *getPlayer();
 	void deletePlayer();
   	void show(); /** shows the scene*/
+    	void startgame();
     
 private:
     QGraphicsScene *scene; /** What is being displayed */
@@ -50,6 +52,7 @@ private:
 
    	QPushButton *buttonclick; /** Nothing */
    	int counter; /** Nothing */
+   	int index;
 
 public slots:
     void handleTimer(); /** Nothing */
