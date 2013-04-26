@@ -108,21 +108,21 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Left Arrow Key pushed
 			if(!gw->getPlayer()->jumping)
 			{
-				gw->getPlayer()->move(-5,0);
+				gw->getPlayer()->move(-10,0);
 			 }
 			 break;
 		case Qt::Key_Right :
 			//Right Arrow Key pushed
 			if(!gw->getPlayer()->jumping)
 			{
-				gw->getPlayer()->move(5,0);
+				gw->getPlayer()->move(10,0);
 			}
 			 break;
 		case Qt::Key_Up : 
 			//Up Arrow Key pushed
 				if(!gw->getPlayer()->jumping)
 				{
-				gw->getPlayer()->setVelocityY(-15);
+				gw->getPlayer()->setVelocityY(-20);
 				gw->getPlayer()->movejump();
 				}
 				//gw->getPlayer()->jump();

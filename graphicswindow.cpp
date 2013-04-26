@@ -98,7 +98,7 @@ void GraphicsWindow::startgame()
 	MyThings.push_back(test);
 //	MyThings[index] = test;
 	scene->addItem(MyThings[index]);
-//	MyThings[index]->move();
+	MyThings[index]->go();
 
 	cout << "Error?" << endl;
 
