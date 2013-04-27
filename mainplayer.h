@@ -26,7 +26,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		bool jumping;
 		void jumpCheck();
 		string getName();
-		bool isAlive;
+//		bool isAlive;
 	
 	private:
 		GraphicsWindow *parent;

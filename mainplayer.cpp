@@ -22,7 +22,7 @@ MainPlayer::MainPlayer(GraphicsWindow *p, string name)
 	floor = 300;
 
 	jumping = false;
-	isAlive = true;
+//	isAlive = true;
 	//velocityY = -10;
 	
 	timer = new QTimer();
@@ -97,9 +97,9 @@ jumping = true;
 //why doesn't jump work?
 	if( (positionX < 0) || (positionX > 600) )
 	{
-//		velocityX= -velocityX;
+		velocityX= -velocityX;
 //		velocityY= -velocityY;
-		return;
+//		return;
 	}
 
 //	velocityY = -5;

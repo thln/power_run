@@ -41,6 +41,7 @@ public:
 	void deletePlayer();
   	void show(); /** shows the scene*/
     	void startgame();
+	bool isAlive;
     
 private:
     QGraphicsScene *scene; /** What is being displayed */

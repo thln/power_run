@@ -122,7 +122,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Up Arrow Key pushed
 				if(!gw->getPlayer()->jumping)
 				{
-				gw->getPlayer()->setVelocityY(-20);
+				gw->getPlayer()->setVelocityY(-17);
 				gw->getPlayer()->movejump();
 				}
 				//gw->getPlayer()->jump();

@@ -29,6 +29,7 @@ GraphicsWindow::GraphicsWindow()  {
     setScene(scene);
     setSceneRect(0, 0, 640, 480);
     setWindowTitle( "Programming Assignment #5: Power Run!");
+    isAlive = false;
     //view = new QGraphicsView( scene );
 
     //To fill a rectangle use a QBrush. To draw the border of a shape, use a QPen
@@ -63,17 +64,20 @@ void GraphicsWindow::setPlayer(string name)
 {
 	Player1 = new MainPlayer(this, name);
 	scene->addItem(Player1);
+	isAlive = true;
 }
 
 void GraphicsWindow::deletePlayer()
 {
-		cout << "hi " << endl;
-	if(Player1 != NULL)
+	//	cout << "hi " << endl;
+	//checks if a "game" is happening
+	if(isAlive)
 	{
-		cout << "restarting" << endl;
+	//	cout << "restarting" << endl;
 		delete Player1;
+		isAlive = false;
 	}
-		cout << "hi " << endl;
+	//	cout << "hi " << endl;
 }
 
 MainPlayer *GraphicsWindow::getPlayer()
@@ -99,6 +103,7 @@ void GraphicsWindow::startgame()
 //	MyThings[index] = test;
 	scene->addItem(MyThings[index]);
 	MyThings[index]->go();
+	
 
 	cout << "Error?" << endl;
 
