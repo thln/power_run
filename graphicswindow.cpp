@@ -96,16 +96,22 @@ GraphicsWindow::~GraphicsWindow()
 
 void GraphicsWindow::startgame()
 {
-	cout << "Error?" << endl;
+//	cout << "Error?" << endl;
 	index = 0;
-	test = new Mother;
-	MyThings.push_back(test);
-//	MyThings[index] = test;
-	scene->addItem(MyThings[index]);
-	MyThings[index]->go();
-	
+	for(int i=0; i<10000; i++)
+	{
+		if(i%200 == 0)
+		{
+			cout << " Sick " << endl;
+			test = new Mother;
+			MyThings.push_back(test);
+		//	MyThings[index] = test;
+			scene->addItem(MyThings[index]);
+			MyThings[index]->go();
+		}
+	}
 
-	cout << "Error?" << endl;
+//	cout << "Error?" << endl;
 
 //	return;
 }

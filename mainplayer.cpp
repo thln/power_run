@@ -74,7 +74,7 @@ void MainPlayer::move(int x, int y)
 
 	if(positionY == floor)
 	{
-		cout << "LALA" << endl;
+//		cout << "LALA" << endl;
 		timer->stop();
 	}
 

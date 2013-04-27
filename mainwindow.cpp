@@ -137,7 +137,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 /** Slot to start game */
 void MainWindow::startGame()
 {
-	cout << "Error?" << endl;
+//	cout << "Error?" << endl;
 
 //	if(gw->getPlayer() != NULL)
 //	{
@@ -145,7 +145,7 @@ void MainWindow::startGame()
 //	}
 
 
-	cout << "Error?" << endl;
+//	cout << "Error?" << endl;
 
 	this->setFocus();
 
