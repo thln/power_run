@@ -35,9 +35,9 @@ MainWindow::MainWindow()
 	tool->addAction( startGameAction );
 	connect( startGameAction, SIGNAL(triggered() ), this, SLOT(startGame() ));
 
-//	QAction *cheatGameAction = new QAction(tr("&Cheat Game"), this);
-//	tool->addAction( cheatGameAction );
-//	connect( cheatGameAction, SIGNAL(triggered() ), this, SLOT( cheatGame() ));
+	QAction *pauseGameAction = new QAction(tr("&Pause Game"), this);
+	tool->addAction( pauseGameAction );
+	connect( pauseGameAction, SIGNAL(triggered() ), this, SLOT( pauseGame() ));
 
 	QAction *quitGameAction = new QAction(tr("&Quit Game"), this);
 	tool->addAction( quitGameAction );
@@ -108,21 +108,21 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Left Arrow Key pushed
 			if(!gw->getPlayer()->jumping)
 			{
-				gw->getPlayer()->move(-10,0);
+				gw->getPlayer()->move(-5,0);
 			 }
 			 break;
 		case Qt::Key_Right :
 			//Right Arrow Key pushed
 			if(!gw->getPlayer()->jumping)
 			{
-				gw->getPlayer()->move(10,0);
+				gw->getPlayer()->move(5,0);
 			}
 			 break;
 		case Qt::Key_Up : 
 			//Up Arrow Key pushed
 				if(!gw->getPlayer()->jumping)
 				{
-				gw->getPlayer()->setVelocityY(-17);
+				gw->getPlayer()->setVelocityY(-15);
 				gw->getPlayer()->movejump();
 				}
 				//gw->getPlayer()->jump();
@@ -215,7 +215,7 @@ void MainWindow::startGame()
 }
 
 /** Slot to start cheating on game */
-void MainWindow::cheatGame()
+void MainWindow::pauseGame()
 {
 /*
 	if(mhChoice->isChecked())

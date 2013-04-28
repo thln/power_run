@@ -7,6 +7,7 @@
 #include <QGraphicsRectItem>
 #include <QTimer>
 #include <QTimeLine>
+#include <time.h>
 #include <QGraphicsItemAnimation>
 #include <QPushButton>
 #include <vector>
@@ -19,6 +20,10 @@
 #include "mainplayer.h"
 #include "thing.h"
 #include "mother.h"
+#include "father.h"
+#include "platformobject.h"
+#include "door.h"
+#include "dog.h"
 
 using namespace std;
 
@@ -49,7 +54,7 @@ private:
     QTimer *timer; /** A Timer */ 
     
     MainPlayer *Player1;
-    	Mother *test;
+ //   	Mother *test;
     vector<Thing*> MyThings;
 
    	QPushButton *buttonclick; /** Nothing */

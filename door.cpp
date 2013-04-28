@@ -4,9 +4,9 @@ using namespace std;
 
 Door::Door()
 {
-//	pixMap1 = new QPixmap("testmom1.png");
-//	pixMap2 = new QPixmap("testmom2.png");
-//	setPixmap(*pixMap1);
+	pixMap1 = new QPixmap("doorclosed.png");
+	pixMap2 = new QPixmap("dooropen.png");
+	setPixmap(*pixMap1);
 	x = 550;
 	y = 300;
 	setPos(x, y);
@@ -37,5 +37,9 @@ void Door::go()
 void Door::move()
 {
 //implement move
-
+		vX = -1;
+		vY = 0;
+		x += vX;
+		y += vY;
+		setPos(x, y);
 }

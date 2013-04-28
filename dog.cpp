@@ -4,11 +4,11 @@ using namespace std;
 
 Dog::Dog()
 {
-//	pixMap1 = new QPixmap("testmom1.png");
+	pixMap1 = new QPixmap("dog.png");
 //	pixMap2 = new QPixmap("testmom2.png");
-//	setPixmap(*pixMap1);
-	x = 550;
-	y = 300;
+	setPixmap(*pixMap1);
+	x = 10;
+	y = 325;
 	setPos(x, y);
 	left = true;
 

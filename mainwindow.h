@@ -57,7 +57,7 @@ private:
 
 public slots:
 	void startGame(); /** slot for starting the game */
-	void cheatGame(); /** slot for starting A* Algorithm */
+	void pauseGame(); /** slot for pausing game */
 	void quitGame(); /** slot for quitting the game */
 	bool clickedstate(); /** slot to check if it was clicked or not */
 

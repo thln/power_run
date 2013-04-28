@@ -40,8 +40,8 @@ void Mother::move()
 //{
 	if(left)
 	{
-	setPixmap(*pixMap2);
-		vX = -1;
+	setPixmap(*pixMap1);
+		vX = -2;
 		vY = 0;
 		x += vX;
 		y += vY;
@@ -49,8 +49,8 @@ void Mother::move()
 	}
 	else if(!left)
 	{
-	setPixmap(*pixMap1);
-		vX = -1;
+	setPixmap(*pixMap2);
+		vX = -2;
 		vY = 0;
 		x += vX;
 		y += vY;

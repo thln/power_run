@@ -113,10 +113,10 @@ jumping = true;
 //{
 	velocityX += accelX;
 	velocityY += accelY;
-	cout << velocityY << endl;
+//	cout << velocityY << endl;
 	positionX += velocityX;
 	positionY += velocityY;
-	cout << positionY << endl;
+//	cout << positionY << endl;
 	setPos(positionX, positionY);
 //}
 //	velocityY = -10;
@@ -126,7 +126,8 @@ jumping = true;
 if(positionY == floor)
 {
 	jumping = false;
-	cout << "LALA" << endl;
+	velocityX = 0;
+//	cout << "LALA" << endl;
 	timer->stop();
 }
 

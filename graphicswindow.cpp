@@ -98,18 +98,67 @@ void GraphicsWindow::startgame()
 {
 //	cout << "Error?" << endl;
 	index = 0;
-	for(int i=0; i<10000; i++)
+
+//			cout << " Sick " << endl;
+//			test = new Mother;
+	srand(time(NULL));
+	switch(rand()%100)
 	{
-		if(i%200 == 0)
-		{
-			cout << " Sick " << endl;
-			test = new Mother;
-			MyThings.push_back(test);
-		//	MyThings[index] = test;
+		case 1:
+			MyThings.push_back(new Mother);
 			scene->addItem(MyThings[index]);
 			MyThings[index]->go();
-		}
+			index++;
+			break;
+		case 2:
+			MyThings.push_back(new Father);
+			scene->addItem(MyThings[index]);
+			MyThings[index]->go();
+			index++;
+			break;
+		case 3:
+			MyThings.push_back(new PlatformObject);
+			scene->addItem(MyThings[index]);
+			MyThings[index]->go();
+			index++;
+			break;
+		case 4:
+			MyThings.push_back(new Door);
+			scene->addItem(MyThings[index]);
+			MyThings[index]->go();
+			index++;
+			break;
+		case 5:
+			MyThings.push_back(new Dog);
+			scene->addItem(MyThings[index]);
+			MyThings[index]->go();
+			index++;
+			break;
+			
 	}
+
+
+//			MyThings.push_back(new Mother);
+//			MyThings.push_back(new Dog);
+//			MyThings.push_back(new Father);
+//			MyThings.push_back(new PlatformObject);
+//			MyThings.push_back(new Door);
+		//	MyThings[index] = test;
+		
+//			for(int i=0; i< MyThings.size(); i++)
+//			{
+//			srand(time(NULL));
+//			while(index != (MyThings.size()-1))
+//			{
+//				if(rand()%200 == 0)
+//				{
+//					scene->addItem(MyThings[index]);
+//					MyThings[index]->go();
+//					index++;
+//				}
+//			}
+//			}
+
 
 //	cout << "Error?" << endl;
 
