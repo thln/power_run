@@ -12,9 +12,9 @@ class Father : public Thing {
 		Father();
 		Father(QPixmap *p, int nx, int ny);
 		~Father();
-		void go();
+//		void go();
 		bool left;
-	
+		void move();	
 	
 	private:
 		int x;
@@ -23,10 +23,10 @@ class Father : public Thing {
 		int vY;
 		QPixmap *pixMap1;
 		QPixmap *pixMap2;
-		QTimer *timer;
+//		QTimer *timer;
 
-	public slots:
-		void move();
+//	public slots:
+//		void move();
 
 };
 

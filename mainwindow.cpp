@@ -106,17 +106,17 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 	switch(e->key()) {
 		case Qt::Key_Left :
 			//Left Arrow Key pushed
-			if(!gw->getPlayer()->jumping)
-			{
+			//if(!gw->getPlayer()->jumping)
+			//{
 				gw->getPlayer()->move(-5,0);
-			 }
+			 //}
 			 break;
 		case Qt::Key_Right :
 			//Right Arrow Key pushed
-			if(!gw->getPlayer()->jumping)
-			{
+			//if(!gw->getPlayer()->jumping)
+			//{
 				gw->getPlayer()->move(5,0);
-			}
+			//}
 			 break;
 		case Qt::Key_Up : 
 			//Up Arrow Key pushed
@@ -217,6 +217,8 @@ void MainWindow::startGame()
 /** Slot to start cheating on game */
 void MainWindow::pauseGame()
 {
+
+	gw->pausegame();
 /*
 	if(mhChoice->isChecked())
 	{

@@ -17,6 +17,8 @@
 #include <QLabel>
 #include <QGraphicsRectItem>
 #include <QMessageBox>
+//#include <stdio.h>
+//#include <stdlib.h>
 #include "mainplayer.h"
 #include "thing.h"
 #include "mother.h"
@@ -46,6 +48,7 @@ public:
 	void deletePlayer();
   	void show(); /** shows the scene*/
     	void startgame();
+    	void pausegame();
 	bool isAlive;
     
 private:
@@ -60,10 +63,12 @@ private:
    	QPushButton *buttonclick; /** Nothing */
    	int counter; /** Nothing */
    	int index;
+  // 	int counter;
 
 public slots:
     void handleTimer(); /** Nothing */
 	void clicker(); /** Nothing */
+	void update();
 
 };
 

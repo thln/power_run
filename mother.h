@@ -12,9 +12,9 @@ class Mother : public Thing {
 		Mother();
 		Mother(QPixmap *p, int nx, int ny);
 		~Mother();
-		void go();
-		bool left;
-	
+//		void go();
+//		bool left;
+		void move();	
 	
 	private:
 		int x;
@@ -23,10 +23,11 @@ class Mother : public Thing {
 		int vY;
 		QPixmap *pixMap1;
 		QPixmap *pixMap2;
-		QTimer *timer;
+//		QTimer *timer;
+		int counter;
 
-	public slots:
-		void move();
+//	public slots:
+//		void move();
 
 };
 

@@ -12,9 +12,9 @@ class PlatformObject : public Thing {
 		PlatformObject();
 		PlatformObject(QPixmap *p, int nx, int ny);
 		~PlatformObject();
-		void go();
+//		void go();
 		bool left;
-	
+		void move();	
 	
 	private:
 		int x;
@@ -23,10 +23,10 @@ class PlatformObject : public Thing {
 		int vY;
 		QPixmap *pixMap1;
 		QPixmap *pixMap2;
-		QTimer *timer;
+//		QTimer *timer;
 
-	public slots:
-		void move();
+//	public slots:
+//		void move();
 
 };
 

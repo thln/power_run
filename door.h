@@ -12,9 +12,9 @@ class Door : public Thing {
 		Door();
 		Door(QPixmap *p, int nx, int ny);
 		~Door();
-		void go();
+//		void go();
 		bool left;
-	
+		void move();	
 	
 	private:
 		int x;
@@ -23,10 +23,10 @@ class Door : public Thing {
 		int vY;
 		QPixmap *pixMap1;
 		QPixmap *pixMap2;
-		QTimer *timer;
+//		QTimer *timer;
 
-	public slots:
-		void move();
+//	public slots:
+
 
 };
 

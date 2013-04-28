@@ -27,7 +27,8 @@ GraphicsWindow::GraphicsWindow()  {
     //We need a scene and a view to do graphics in QT
     scene = new QGraphicsScene();
     setScene(scene);
-    setSceneRect(0, 0, 640, 480);
+    //640 480
+    setSceneRect(0, 0, 780, 500);
     setWindowTitle( "Programming Assignment #5: Power Run!");
     isAlive = false;
     //view = new QGraphicsView( scene );
@@ -39,7 +40,10 @@ GraphicsWindow::GraphicsWindow()  {
     QBrush yellowBrush(Qt::yellow);
     QBrush greenBrush(Qt::green);
 
-  	
+	timer = new QTimer();
+	timer->setInterval(5);
+  	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+  	counter = 0;
 }
 
 /** Show
@@ -94,73 +98,86 @@ GraphicsWindow::~GraphicsWindow()
     delete scene;
 }
 
-void GraphicsWindow::startgame()
+void GraphicsWindow::update()
 {
-//	cout << "Error?" << endl;
-	index = 0;
-
-//			cout << " Sick " << endl;
-//			test = new Mother;
-	srand(time(NULL));
-	switch(rand()%100)
+//time_t time1;
+//time(time1);
+	srand(time(NULL)* counter);
+//	srand(5000);
+	int num = rand() % index;
+//	cout << num << endl;
+	switch(num) 
 	{
 		case 1:
 			MyThings.push_back(new Mother);
-			scene->addItem(MyThings[index]);
-			MyThings[index]->go();
-			index++;
+			scene->addItem(MyThings[MyThings.size()-1]);
+//			MyThings[index]->move();
+//			index++;
 			break;
 		case 2:
 			MyThings.push_back(new Father);
-			scene->addItem(MyThings[index]);
-			MyThings[index]->go();
-			index++;
+			scene->addItem(MyThings[MyThings.size()-1]);
+//			MyThings[index]->move();
+//			index++;
 			break;
 		case 3:
 			MyThings.push_back(new PlatformObject);
-			scene->addItem(MyThings[index]);
-			MyThings[index]->go();
-			index++;
+			scene->addItem(MyThings[MyThings.size()-1]);
+//			MyThings[index]->move();
+//			index++;
 			break;
 		case 4:
 			MyThings.push_back(new Door);
-			scene->addItem(MyThings[index]);
-			MyThings[index]->go();
-			index++;
+			scene->addItem(MyThings[MyThings.size()-1]);
+//			MyThings[index]->move();
+//			index++;
 			break;
 		case 5:
 			MyThings.push_back(new Dog);
-			scene->addItem(MyThings[index]);
-			MyThings[index]->go();
-			index++;
+			scene->addItem(MyThings[MyThings.size()-1]);
+//			MyThings[index]->move();
+//			index++;
 			break;
 			
 	}
+	for(int i=0; i<MyThings.size(); i++)
+	{
+//			cout << "Hi" << endl;
+			MyThings[i]->move();	
+	}
 
+counter++;
 
-//			MyThings.push_back(new Mother);
-//			MyThings.push_back(new Dog);
-//			MyThings.push_back(new Father);
-//			MyThings.push_back(new PlatformObject);
-//			MyThings.push_back(new Door);
-		//	MyThings[index] = test;
-		
-//			for(int i=0; i< MyThings.size(); i++)
-//			{
-//			srand(time(NULL));
-//			while(index != (MyThings.size()-1))
-//			{
-//				if(rand()%200 == 0)
-//				{
-//					scene->addItem(MyThings[index]);
-//					MyThings[index]->go();
-//					index++;
-//				}
-//			}
-//			}
+if(counter == 1000)
+{
+	index = index-100;
+}
 
+}
+
+void GraphicsWindow::startgame()
+{
+//	cout << "Error?" << endl;
+	index = 3000;
+
+	timer->start();
+
+//			cout << " Sick " << endl;
+//			test = new Mother;
 
 //	cout << "Error?" << endl;
 
 //	return;
+}
+
+void GraphicsWindow::pausegame()
+{
+	if(timer->isActive())
+	{
+		timer->stop();
+	}
+	else if(!timer->isActive())
+	{
+		timer->start();			
+	}
 }

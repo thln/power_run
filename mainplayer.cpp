@@ -59,16 +59,16 @@ if(positionY == floor)
 void MainPlayer::move(int x, int y)
 {
 //	std::cout << x << std::endl;
-	if( ((positionX < 0) && x<0) || ((positionX > 600) && x>1) )
+	if( ((positionX < 0) && x<0) || ((positionX > 700) && x>1) )
 	{
 //		velocityX= -velocityX;
 //		velocityY= -velocityY;
 		return;
 	}	
 		velocityX = x;
-		velocityY = y;
+//		velocityY = y;
 		positionX += velocityX;
-		positionY += velocityY;
+//		positionY += velocityY;
 //		cout << "X,Y " << positionX << " " << positionY << endl;
 		setPos(positionX, positionY);
 
@@ -95,7 +95,7 @@ void MainPlayer::jump()
 jumping = true;
 
 //why doesn't jump work?
-	if( (positionX < 0) || (positionX > 600) )
+	if( (positionX < 0) || (positionX > 700) )
 	{
 		velocityX= -velocityX;
 //		velocityY= -velocityY;

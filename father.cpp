@@ -12,9 +12,9 @@ Father::Father()
 	setPos(x, y);
 	left = true;
 
-	timer = new QTimer();
-	timer->setInterval(50);
-	connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+//	timer = new QTimer();
+//	timer->setInterval(50);
+//	connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
 }
 
@@ -29,10 +29,12 @@ Father::Father(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
 
 }
 
+/*
 void Father::go()
 {
 	timer->start();
 }
+*/
 
 void Father::move()
 {

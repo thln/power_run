@@ -12,9 +12,9 @@ Dog::Dog()
 	setPos(x, y);
 	left = true;
 
-	timer = new QTimer();
-	timer->setInterval(50);
-	connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+//	timer = new QTimer();
+//	timer->setInterval(50);
+//	connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
 }
 
@@ -29,13 +29,25 @@ Dog::Dog(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
 
 }
 
+/*
 void Dog::go()
 {
 	timer->start();
 }
+*/
 
 void Dog::move()
 {
-//implement move
-
+	//implement move
+	
+	if(counter> 1000)
+	{
+		vX = 2;
+		vY = 0;
+		x += vX;
+		y += vY;
+		setPos(x, y);
+	
+	}
+	counter++;
 }
