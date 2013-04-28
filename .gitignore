@@ -11,3 +11,9 @@
 *.lai
 *.la
 *.a
+*.cpp~
+moc_*.cpp
+*.h~
+game_tamnguye.pro
+game_tamnguye
+.gitignore~
