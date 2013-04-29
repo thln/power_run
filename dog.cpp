@@ -7,7 +7,7 @@ Dog::Dog()
 	pixMap1 = new QPixmap("images/dog.png");
 //	pixMap2 = new QPixmap("testmom2.png");
 	setPixmap(*pixMap1);
-	x = 10;
+	x = 0;
 	y = 350;
 	setPos(x, y);
 	left = true;

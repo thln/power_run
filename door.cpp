@@ -7,7 +7,7 @@ Door::Door()
 	pixMap1 = new QPixmap("images/doorclosed.png");
 	pixMap2 = new QPixmap("images/dooropen.png");
 	setPixmap(*pixMap1);
-	x = 550;
+	x = 700;
 	y = 150;
 	setPos(x, y);
 	isOpen = false;
@@ -20,7 +20,8 @@ Door::Door()
 
 Door::~Door()
 {
-
+	delete pixMap1;
+	delete pixMap2;
 }
 
 Door::Door(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
@@ -44,4 +45,17 @@ void Door::move()
 		x += vX;
 		y += vY;
 		setPos(x, y);
+
+if(counter%600 == 0)
+{	
+	isOpen = true;
+	setPixmap(*pixMap2);
+}
+if(counter%1201 == 0)
+{
+	isOpen = false;
+	setPixmap(*pixMap1);
+}
+
+counter++;
 }

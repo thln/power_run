@@ -21,6 +21,7 @@ class Door : public Thing {
 		int y;
 		int vX;
 		int vY;
+		int counter;
 		QPixmap *pixMap1;
 		QPixmap *pixMap2;
 //		QTimer *timer;

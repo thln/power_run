@@ -103,8 +103,10 @@ GraphicsWindow::GraphicsWindow()  {
 	
 	
 
+	lives = 5;
+	score = 0;
 
-
+//	MyScore.push_back(scoreBox(score));
 
 
 
@@ -157,6 +159,12 @@ MainPlayer *GraphicsWindow::getPlayer()
 GraphicsWindow::~GraphicsWindow()
 {
     timer->stop();
+    //delete MyThings;
+    //delete MyBackground;
+    for(int i=0; i<MyThings.size(); i++)
+    {
+    	delete MyThings[i];
+    }   
     delete Player1;
     delete timer;
     delete scene;
@@ -164,72 +172,75 @@ GraphicsWindow::~GraphicsWindow()
 
 void GraphicsWindow::update()
 {
-//time_t time1;
-//time(time1);
-	srand(time(NULL)* counter);
-//	srand(5000);
-	int num = rand() % index;
-//	cout << num << endl;
-	switch(num) 
-	{
-		case 1:
-			MyThings.push_back(new Mother);
-			scene->addItem(MyThings[MyThings.size()-1]);
-//			MyThings[index]->move();
-//			index++;
-			break;
-		case 2:
-			MyThings.push_back(new Father);
-			scene->addItem(MyThings[MyThings.size()-1]);
-//			MyThings[index]->move();
-//			index++;
-			break;
-		case 3:
-			MyThings.push_back(new PlatformObject);
-			scene->addItem(MyThings[MyThings.size()-1]);
-//			MyThings[index]->move();
-//			index++;
-			break;
-		case 4:
-			MyThings.push_back(new Door);
-			scene->addItem(MyThings[MyThings.size()-1]);
-//			MyThings[index]->move();
-//			index++;
-			break;
-		case 5:
-			MyThings.push_back(new Dog);
-			scene->addItem(MyThings[MyThings.size()-1]);
-//			MyThings[index]->move();
-//			index++;
-			break;
+	//time_t time1;
+	//time(time1);
+		srand(time(NULL)* counter);
+	//	srand(5000);
+		int num = rand() % index;
+	//	cout << num << endl;
+		switch(num) 
+		{
+			case 1:
+				MyThings.push_back(new Mother);
+				scene->addItem(MyThings[MyThings.size()-1]);
+	//			MyThings[index]->move();
+	//			index++;
+				break;
+			case 2:
+				MyThings.push_back(new Father);
+				scene->addItem(MyThings[MyThings.size()-1]);
+	//			MyThings[index]->move();
+	//			index++;
+				break;
+			case 3:
+				MyThings.push_back(new PlatformObject);
+				scene->addItem(MyThings[MyThings.size()-1]);
+	//			MyThings[index]->move();
+	//			index++;
+				break;
+			case 4:
+				MyThings.push_back(new Door);
+				scene->addItem(MyThings[MyThings.size()-1]);
+	//			MyThings[index]->move();
+	//			index++;
+				break;
+			case 5:
+				MyThings.push_back(new Dog);
+				scene->addItem(MyThings[MyThings.size()-1]);
+	//			MyThings[index]->move();
+	//			index++;
+				break;
 			
-	}
-	for(int i=0; i<MyThings.size(); i++)
+		}
+		for(int i=0; i<MyThings.size(); i++)
+		{
+	//			cout << "Hi" << endl;
+				MyThings[i]->move();	
+		}
+
+	counter++;
+
+	if(counter == 1000)
 	{
-//			cout << "Hi" << endl;
-			MyThings[i]->move();	
+		index = index-100;
+		counter = 0;
 	}
 
-counter++;
-
-if(counter == 1000)
-{
-	index = index-100;
-}
-
-if(counter%10 == 0)
-{
-	setBackgroundBrush(MyBackground[imageindex]);
-	setCacheMode(QGraphicsView::CacheBackground);
+	if(counter%10 == 0)
+	{
+		setBackgroundBrush(MyBackground[imageindex]);
+		setCacheMode(QGraphicsView::CacheBackground);
 	
-	imageindex++;
-	if( imageindex == MyBackground.size())
-	{
-		imageindex = 0;
-	}
-}	
+		imageindex++;
+		if( imageindex == MyBackground.size())
+		{
+			imageindex = 0;
+		}
+	}	
 
-
+	score += (3000/index); 
+//	MyScore.push_back(scoreBox(score));
+//	MyScore.pop();
 }
 
 void GraphicsWindow::startgame()
@@ -257,4 +268,14 @@ void GraphicsWindow::pausegame()
 	{
 		timer->start();			
 	}
+}
+
+QTimer *GraphicsWindow::getTimer()
+{
+	return timer;
+}
+
+double GraphicsWindow::getScore()
+{
+	return score;
 }

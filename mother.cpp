@@ -7,7 +7,7 @@ Mother::Mother()
 	pixMap1 = new QPixmap("images/testmom1.png");
 	pixMap2 = new QPixmap("images/testmom2.png");
 	setPixmap(*pixMap1);
-	x = 550;
+	x = 700;
 	y = 300;
 	setPos(x, y);
 //	left = true;
@@ -20,7 +20,8 @@ Mother::Mother()
 
 Mother::~Mother()
 {
-
+	delete pixMap1;
+	delete pixMap2;
 }
 
 Mother::Mother(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)

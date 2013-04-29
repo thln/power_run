@@ -27,7 +27,9 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 //		void KeyPressEvent(QKeyEvent *e);
 		void move(int x, int y);
 		void movejump();
+		void moveduck();
 		bool jumping;
+		bool ducking;
 		void jumpCheck();
 		QString getName();
 //		bool isAlive;
@@ -36,6 +38,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		GraphicsWindow *parent;
 		QGraphicsSimpleTextItem* nameID;
 		QPixmap *pic;
+		QPixmap *picduck;
 		QString name_;
 		double velocityX;
 		double velocityY;

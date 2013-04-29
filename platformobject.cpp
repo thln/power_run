@@ -7,7 +7,7 @@ PlatformObject::PlatformObject()
 	pixMap1 = new QPixmap("images/table.png");
 //	pixMap2 = new QPixmap("testmom2.png");
 	setPixmap(*pixMap1);
-	x = 550;
+	x = 700;
 	y = 275;
 	setPos(x, y);
 	left = true;
@@ -20,7 +20,7 @@ PlatformObject::PlatformObject()
 
 PlatformObject::~PlatformObject()
 {
-
+	delete pixMap1;
 }
 
 PlatformObject::PlatformObject(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)

@@ -49,6 +49,7 @@ private:
 	QToolBar *tool; /** A toolbar */
 	startScreenWindow *startscreen;
 	QString name;
+	QLineEdit *scoreOutput;
 	GraphicsWindow *gw; /** Your graphics Window */
 //	QRadioButton *mhChoice; /** Radio button choice for manhattan heuristic */
 //	QRadioButton *ooohChoice; /** Radio button choice for out of order heuristic */

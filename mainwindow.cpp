@@ -46,10 +46,21 @@ MainWindow::MainWindow()
 	tool->addAction( quitGameAction );
 	connect( quitGameAction, SIGNAL(triggered() ), this, SLOT(quitGame() ));
 
-	tool->show();
+
+	scoreOutput = new QLineEdit;
+	scoreOutput->setReadOnly(true);
+	tool->addWidget("Score: ", scoreOutput);
+
+//	tool->show();
 	
 	bool ok;
-	name = QInputDialog::getText(this, tr("QInputDialog::getText()"), tr("User name:"), QLineEdit::Normal, QDir::home().dirName(), &ok);
+	name = QInputDialog::getText(this, tr("Name?"), tr("Don't forget to resize the window!"), QLineEdit::Normal, QDir::home().dirName(), &ok);
+
+	QDockWidget *tqdw = new QDockWidget();
+	tqdw->setWidget(tool);
+	addDockWidget(Qt::TopDockWidgetArea, tqdw);
+	tqdw->setFeatures(QDockWidget::NoDockWidgetFeatures);
+
 /*
 //---------------------------------------------------------------
 //Radio Buttons between Heuristics
@@ -102,6 +113,11 @@ MainWindow::MainWindow()
 /** Default Destructor */
 MainWindow::~MainWindow()
 {
+//	delete startGameAction;
+//	delete pauseGameAction;
+//	delete QuitGameAction;
+	delete tool;
+//	delete startScreen;
 	delete gw;
 
 }
@@ -135,8 +151,11 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			break;		
 		case Qt::Key_Down : 
 			//Down Arrow Key pushed
+			gw->getPlayer()->moveduck();
 			break;
 	};
+	
+//	scoreOutput->setText(QString::number(gw->getScore()));
 //	gw->getPlayer()->jumpCheck();
 }
 
@@ -173,6 +192,10 @@ void MainWindow::startGame()
 	gw->setPlayer(name);
 	gw->startgame();
 
+//	while(gw->getTimer()->isActive())
+//	{	
+//	scoreOutput->setText(QString::number(gw->getScore()));
+//	}
 /*
 //Takes inputs from lineedits and store them in respective values
 	size = textfields->getSizeEdit()->text().toInt();

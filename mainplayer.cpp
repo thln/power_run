@@ -15,19 +15,21 @@ MainPlayer::MainPlayer(GraphicsWindow *p, QString name)
 	name_ = name;
 
 	QFont font ("Arial", 12);
-	QBrush blackBrush(Qt::black);
+	QBrush whiteBrush(Qt::white);
 	nameID = new QGraphicsSimpleTextItem(name_, this);
 	nameID->setFont(font);
-	nameID->setBrush(blackBrush);
+	nameID->setBrush(whiteBrush);
 
 	pic = new QPixmap("images/mainplayerimage.png");
+	picduck = new QPixmap("images/testcharacterduck.png");	
 	setPixmap(*pic);
 	positionX = 100;
 	positionY = 300;
 	setPos(100, 300);
 	floor = 300;
 
-	jumping = false; 
+	jumping = false;
+	ducking = false; 
 //	isAlive = true;
 	//velocityY = -10;
 	
@@ -39,6 +41,9 @@ MainPlayer::MainPlayer(GraphicsWindow *p, QString name)
 MainPlayer::~MainPlayer()
 {
 	timer->stop();
+	delete pic;
+	delete picduck;
+	delete nameID;
 }
 
 void MainPlayer::setVelocity(double x, double y)
@@ -64,26 +69,25 @@ if(positionY == floor)
 
 void MainPlayer::move(int x, int y)
 {
-//	std::cout << x << std::endl;
-	if( ((positionX < 0) && x<0) || ((positionX > 700) && x>1) )
+	if(parent->getTimer()->isActive())
 	{
-//		velocityX= -velocityX;
-//		velocityY= -velocityY;
-		return;
-	}	
-		velocityX = x;
-//		velocityY = y;
-		positionX += velocityX;
-//		positionY += velocityY;
-//		cout << "X,Y " << positionX << " " << positionY << endl;
-		setPos(positionX, positionY);
+		ducking = false;
+		setPixmap(*pic);
+		if( ((positionX < 0) && x<0) || ((positionX > 700) && x>1) )
+		{
+	//		velocityX= -velocityX;
+	//		velocityY= -velocityY;
+			return;
+		}	
+			velocityX = x;
+			positionX += velocityX;
+			setPos(positionX, positionY);
 
-	if(positionY == floor)
-	{
-//		cout << "LALA" << endl;
-		timer->stop();
+		if(positionY == floor)
+		{
+			timer->stop();
+		}
 	}
-
 }
 
 void MainPlayer::setVelocityY(double y)
@@ -98,43 +102,40 @@ QString MainPlayer::getName()
 
 void MainPlayer::jump()
 {
-jumping = true;
-
-//why doesn't jump work?
-	if( (positionX < 0) || (positionX > 700) )
+	if(parent->getTimer()->isActive())
 	{
-		velocityX= -velocityX;
-//		velocityY= -velocityY;
-//		return;
-	}
+		ducking = false;
+		setPixmap(*pic);
 
-//	velocityY = -5;
-	accelY = 1;
-//	floor = positionY;
+		jumping = true;
+
+			if( (positionX < 0) || (positionX > 700) )
+			{
+				velocityX= -velocityX;
+		//		velocityY= -velocityY;
+		//		return;
+			}
+
+			accelY = 1;
 	
-//do{
-//	if(counter%10 == 0)
-//	{
-//for(int i=0; i<19; i++)
-//{
-	velocityX += accelX;
-	velocityY += accelY;
-//	cout << velocityY << endl;
-	positionX += velocityX;
-	positionY += velocityY;
-//	cout << positionY << endl;
-	setPos(positionX, positionY);
-//}
-//	velocityY = -10;
-//	}
-//	counter++;	
-//}while(positionY != floor);
-if(positionY == floor)
-{
-	jumping = false;
-	velocityX = 0;
-//	cout << "LALA" << endl;
-	timer->stop();
+			velocityX += accelX;
+			velocityY += accelY;
+			positionX += velocityX;
+			positionY += velocityY;
+			setPos(positionX, positionY);
+	
+		if(positionY == floor)
+		{
+			jumping = false;
+			velocityX = 0;
+			timer->stop();
+		}
+	}
 }
+
+void MainPlayer::moveduck()
+{
+	ducking = true;
+	setPixmap(*picduck);
 
 }
