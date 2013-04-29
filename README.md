@@ -1,12 +1,12 @@
 # Game - Programming Assignments Private Repository
 ### Student Information
-  + Name: Tommy Trojan
-  + USC Email: ttrojan@usc.edu
-  + USC ID: 0123456789
+  + Name: Tam Henry Le Nguyen
+  + USC Email: tamnguye@usc.edu
+  + USC ID: 6154285255
 
 ### Game Information
-  + Game Name: myAwsomeGame
-  + Game Description: One sentence game description
+  + Game Name: Power Run!
+  + Game Description: Uh Oh. Your battery's running low...
   + [Game Design Doc](GameDesignDoc.md)
 
 
@@ -14,12 +14,16 @@
 The grader should use the following procedure to compile and run the code:
 ```shell
 #Compile Instructions
-echo "Write command here"
+echo "qmake -project"
+echo "qmake"
+echo "make"
 #Doxygen Instructions
 echo "Write command here"
 #Command to run
-echo "Write command here"
+echo "./game_tamnguye"
 ```
 
 ### Screenshots -- [Optional]
-You can either remove this section or add screenshots if you wish.
+![alt text]( images/PowerRunScreen1.png "example game play")
+![alt text]( images/PowerRunScreen2.png "example game play")
+![alt text]( images/PowerRunScreen3.png "example game play")
