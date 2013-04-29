@@ -19,5 +19,8 @@ game_tamnguye1
 .gitignore~
 Makefile
 GameDesignDocExample.md
-GameDesignDoc.md~
+*.md~
+config.txt
+html/
+latex/
 
