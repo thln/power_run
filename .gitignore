@@ -14,6 +14,10 @@
 *.cpp~
 moc_*.cpp
 *.h~
-game_tamnguye.pro
-game_tamnguye
+game_tamnguye1.pro
+game_tamnguye1
 .gitignore~
+Makefile
+GameDesignDocExample.md
+GameDesignDoc.md~
+
