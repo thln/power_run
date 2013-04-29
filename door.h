@@ -13,7 +13,7 @@ class Door : public Thing {
 		Door(QPixmap *p, int nx, int ny);
 		~Door();
 //		void go();
-		bool left;
+		bool isOpen;
 		void move();	
 	
 	private:

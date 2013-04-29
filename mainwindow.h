@@ -18,6 +18,9 @@
 #include <QAction>
 #include <QWidget>
 #include <QDockWidget>
+#include "startscreenwindow.h"
+#include <QInputDialog>
+#include <QDir>
 
 //#include "puzzle_solver.h"
 //#include "puzzle_heur.h"
@@ -44,6 +47,8 @@ private:
 //	QDockWidget *lqdw; /** Left Doct Widget */
 //	formlayout *textfields; /** A formlayout to take text from */
 	QToolBar *tool; /** A toolbar */
+	startScreenWindow *startscreen;
+	QString name;
 	GraphicsWindow *gw; /** Your graphics Window */
 //	QRadioButton *mhChoice; /** Radio button choice for manhattan heuristic */
 //	QRadioButton *ooohChoice; /** Radio button choice for out of order heuristic */

@@ -4,8 +4,8 @@ using namespace std;
 
 Mother::Mother()
 {
-	pixMap1 = new QPixmap("testmom1.png");
-	pixMap2 = new QPixmap("testmom2.png");
+	pixMap1 = new QPixmap("images/testmom1.png");
+	pixMap2 = new QPixmap("images/testmom2.png");
 	setPixmap(*pixMap1);
 	x = 550;
 	y = 300;

@@ -9,19 +9,25 @@ MainPlayer::MainPlayer()
 }
 
 
-MainPlayer::MainPlayer(GraphicsWindow *p, string name)
+MainPlayer::MainPlayer(GraphicsWindow *p, QString name)
 {
 	parent = p;
 	name_ = name;
 
-	pic = new QPixmap("mainplayerimage.png");
+	QFont font ("Arial", 12);
+	QBrush blackBrush(Qt::black);
+	nameID = new QGraphicsSimpleTextItem(name_, this);
+	nameID->setFont(font);
+	nameID->setBrush(blackBrush);
+
+	pic = new QPixmap("images/mainplayerimage.png");
 	setPixmap(*pic);
 	positionX = 100;
 	positionY = 300;
 	setPos(100, 300);
 	floor = 300;
 
-	jumping = false;
+	jumping = false; 
 //	isAlive = true;
 	//velocityY = -10;
 	
@@ -85,7 +91,7 @@ void MainPlayer::setVelocityY(double y)
 	velocityY = y;
 }
 
-string MainPlayer::getName()
+QString MainPlayer::getName()
 {
 	return name_;
 }

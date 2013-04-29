@@ -16,10 +16,13 @@ using namespace std;
 /** Default Constructor */
 MainWindow::MainWindow()
 {
-	gw = new GraphicsWindow;
-	gw->setBackgroundBrush(QImage("testbackground.png"));
-	gw->setCacheMode(QGraphicsView::CacheBackground);
-	setCentralWidget(gw);
+
+	startscreen = new startScreenWindow;
+	setCentralWidget(startscreen);
+//	gw = new GraphicsWindow;
+//	gw->setBackgroundBrush(QImage("images/testbackground.png"));
+//	gw->setCacheMode(QGraphicsView::CacheBackground);
+//	setCentralWidget(gw);
 	//setFocus();
 
 	//string name = "Henry";
@@ -44,6 +47,9 @@ MainWindow::MainWindow()
 	connect( quitGameAction, SIGNAL(triggered() ), this, SLOT(quitGame() ));
 
 	tool->show();
+	
+	bool ok;
+	name = QInputDialog::getText(this, tr("QInputDialog::getText()"), tr("User name:"), QLineEdit::Normal, QDir::home().dirName(), &ok);
 /*
 //---------------------------------------------------------------
 //Radio Buttons between Heuristics
@@ -108,21 +114,21 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Left Arrow Key pushed
 			//if(!gw->getPlayer()->jumping)
 			//{
-				gw->getPlayer()->move(-5,0);
+				gw->getPlayer()->move(-8,0);
 			 //}
 			 break;
 		case Qt::Key_Right :
 			//Right Arrow Key pushed
 			//if(!gw->getPlayer()->jumping)
 			//{
-				gw->getPlayer()->move(5,0);
+				gw->getPlayer()->move(8,0);
 			//}
 			 break;
 		case Qt::Key_Up : 
 			//Up Arrow Key pushed
 				if(!gw->getPlayer()->jumping)
 				{
-				gw->getPlayer()->setVelocityY(-15);
+				gw->getPlayer()->setVelocityY(-16);
 				gw->getPlayer()->movejump();
 				}
 				//gw->getPlayer()->jump();
@@ -137,6 +143,20 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 /** Slot to start game */
 void MainWindow::startGame()
 {
+
+	delete startscreen;
+
+//	bool ok;
+//	QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"), tr("User name:"), QLineEdit::Normal, QDir::home().dirName(), &ok);
+
+
+	gw = new GraphicsWindow;
+	gw->setBackgroundBrush(QImage("images/testbackground.png"));
+	gw->setCacheMode(QGraphicsView::CacheBackground);
+	setCentralWidget(gw);
+
+
+
 //	cout << "Error?" << endl;
 
 //	if(gw->getPlayer() != NULL)
@@ -149,7 +169,7 @@ void MainWindow::startGame()
 
 	this->setFocus();
 
-	string name = "Henry";
+//	string name = "Henry";
 	gw->setPlayer(name);
 	gw->startgame();
 

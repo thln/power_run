@@ -4,13 +4,13 @@ using namespace std;
 
 Door::Door()
 {
-	pixMap1 = new QPixmap("doorclosed.png");
-	pixMap2 = new QPixmap("dooropen.png");
+	pixMap1 = new QPixmap("images/doorclosed.png");
+	pixMap2 = new QPixmap("images/dooropen.png");
 	setPixmap(*pixMap1);
 	x = 550;
-	y = 200;
+	y = 150;
 	setPos(x, y);
-	left = true;
+	isOpen = false;
 
 //	timer = new QTimer();
 //	timer->setInterval(50);

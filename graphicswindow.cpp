@@ -44,6 +44,70 @@ GraphicsWindow::GraphicsWindow()  {
 	timer->setInterval(5);
   	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
   	counter = 0;
+
+
+//adding pictures in for animation
+	imageindex = 0;
+
+/*
+		pic1 = new QPixmap("images/testbackground1.png");
+	setPixmap(*pic1);
+		pic2 = new QPixmap("images/testbackground2.png");
+	setPixmap(*pic2);
+		pic3 = new QPixmap("images/testbackground3.png");
+	setPixmap(*pic3);
+		pic4 = new QPixmap("images/testbackground4.png");
+	setPixmap(*pic4);
+		pic5 = new QPixmap("images/testbackground5.png");
+	setPixmap(*pic5);
+		pic6 = new QPixmap("images/testbackground6.png");
+	setPixmap(*pic6);
+		pic7 = new QPixmap("images/testbackground7.png");
+	setPixmap(*pic7);
+		pic8 = new QPixmap("images/testbackground8.png");
+	setPixmap(*pic8);
+		pic9 = new QPixmap("images/testbackground9.png");
+	setPixmap(*pic9);
+		pic10 = new QPixmap("images/testbackground10.png");
+	setPixmap(*pic);
+		pic11 = new QPixmap("images/testbackground11.png");
+	setPixmap(*pic);
+		pic12 = new QPixmap("images/testbackground12.png");
+	setPixmap(*pic);
+		pic13 = new QPixmap("images/testbackground13.png");
+	setPixmap(*pic);
+		pic14 = new QPixmap("images/testbackground14.png");
+	setPixmap(*pic);
+		pic15 = new QPixmap("images/testbackground15.png");
+	setPixmap(*pic);
+		pic16 = new QPixmap("images/testbackground16.png");
+	setPixmap(*pic);
+*/	
+	
+	MyBackground.push_back(QImage("images/testbackground1.png"));
+	MyBackground.push_back(QImage("images/testbackground2.png"));
+	MyBackground.push_back(QImage("images/testbackground3.png"));
+	MyBackground.push_back(QImage("images/testbackground4.png"));
+	MyBackground.push_back(QImage("images/testbackground5.png"));
+	MyBackground.push_back(QImage("images/testbackground6.png"));
+	MyBackground.push_back(QImage("images/testbackground7.png"));
+	MyBackground.push_back(QImage("images/testbackground8.png"));
+	MyBackground.push_back(QImage("images/testbackground9.png"));
+	MyBackground.push_back(QImage("images/testbackground10.png"));
+	MyBackground.push_back(QImage("images/testbackground11.png"));
+	MyBackground.push_back(QImage("images/testbackground12.png"));
+	MyBackground.push_back(QImage("images/testbackground13.png"));
+	MyBackground.push_back(QImage("images/testbackground14.png"));
+	MyBackground.push_back(QImage("images/testbackground15.png"));
+	MyBackground.push_back(QImage("images/testbackground16.png"));
+	
+	
+
+
+
+
+
+
 }
 
 /** Show
@@ -64,7 +128,7 @@ QGraphicsScene *GraphicsWindow::getScene()
 	return scene;
 }
 
-void GraphicsWindow::setPlayer(string name)
+void GraphicsWindow::setPlayer(QString name)
 {
 	Player1 = new MainPlayer(this, name);
 	scene->addItem(Player1);
@@ -152,6 +216,19 @@ if(counter == 1000)
 {
 	index = index-100;
 }
+
+if(counter%10 == 0)
+{
+	setBackgroundBrush(MyBackground[imageindex]);
+	setCacheMode(QGraphicsView::CacheBackground);
+	
+	imageindex++;
+	if( imageindex == MyBackground.size())
+	{
+		imageindex = 0;
+	}
+}	
+
 
 }
 

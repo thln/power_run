@@ -4,11 +4,11 @@ using namespace std;
 
 Father::Father()
 {
-	pixMap1 = new QPixmap("packagedad.png");
+	pixMap1 = new QPixmap("images/packagedad.png");
 //	pixMap2 = new QPixmap("testmom2.png");
 	setPixmap(*pixMap1);
 	x = 550;
-	y = 200;
+	y = 225;
 	setPos(x, y);
 	left = true;
 

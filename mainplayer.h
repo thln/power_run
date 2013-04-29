@@ -6,6 +6,10 @@
 #include <QGraphicsPixmapItem>
 #include <iostream>
 #include <QTimer>
+#include <QGraphicsSimpleTextItem>
+#include <QFont>
+#include <QBrush>
+
 
 using namespace std;
 
@@ -16,7 +20,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 
 	public:
 		MainPlayer();
-		MainPlayer(GraphicsWindow *p, string name);
+		MainPlayer(GraphicsWindow *p, QString name);
 		~MainPlayer();
 		void setVelocity(double x, double y);
 		void setVelocityY(double y);
@@ -25,13 +29,14 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		void movejump();
 		bool jumping;
 		void jumpCheck();
-		string getName();
+		QString getName();
 //		bool isAlive;
 	
 	private:
 		GraphicsWindow *parent;
+		QGraphicsSimpleTextItem* nameID;
 		QPixmap *pic;
-		string name_;
+		QString name_;
 		double velocityX;
 		double velocityY;
 //		QKeyevent *e;

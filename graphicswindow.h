@@ -17,6 +17,9 @@
 #include <QLabel>
 #include <QGraphicsRectItem>
 #include <QMessageBox>
+#include <QPixmap>
+#include <QString>
+#include <QImage>
 //#include <stdio.h>
 //#include <stdlib.h>
 #include "mainplayer.h"
@@ -43,7 +46,7 @@ public:
     explicit GraphicsWindow(); /** Constructor */
     ~GraphicsWindow(); /** Destructor */
 	QGraphicsScene *getScene(); /** Scene Accessor*/
-	void setPlayer(string name);
+	void setPlayer(QString name);
 	MainPlayer *getPlayer();
 	void deletePlayer();
   	void show(); /** shows the scene*/
@@ -59,10 +62,12 @@ private:
     MainPlayer *Player1;
  //   	Mother *test;
     vector<Thing*> MyThings;
+    vector<QImage> MyBackground;
 
    	QPushButton *buttonclick; /** Nothing */
    	int counter; /** Nothing */
    	int index;
+   	int imageindex;
   // 	int counter;
 
 public slots:
