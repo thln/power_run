@@ -46,7 +46,7 @@ MainWindow::MainWindow()
 	tool->addAction( quitGameAction );
 	connect( quitGameAction, SIGNAL(triggered() ), this, SLOT(quitGame() ));
 
-	label1 = new QLabel;
+	label1 = new QLabel; 
 	label1->setText("Score: ");
 	tool->addWidget(label1);
 
