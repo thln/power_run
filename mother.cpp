@@ -39,3 +39,11 @@ void Mother::move()
 		y += vY;
 		setPos(x, y);
 }
+
+/**Makes everything faster */
+void Mother::faster()
+{
+	vX = vX*2;
+	vY = vY*2;
+
+}

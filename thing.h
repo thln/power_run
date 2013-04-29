@@ -16,6 +16,7 @@ class Thing: public QObject, public QGraphicsPixmapItem {
 		virtual int getType() = 0; /** Returns Type */
 		int type; /** The Type */
 		bool isOpen; /** Nothing */
+		virtual void faster() = 0; /** Speeds up game */
 		
 	private:
 		int x; /** position X */

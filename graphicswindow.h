@@ -58,6 +58,7 @@ public:
 	int getLife(); /** returns number of lives */
 	bool invincible; /** checks if in invincible mode */
 	bool batteryOn; /** checks if just got battery */
+	bool doublespeed; /** Checks if sped up already */
     
 private:
     QGraphicsScene *scene; /** What is being displayed */

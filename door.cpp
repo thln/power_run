@@ -54,3 +54,11 @@ else
 
 counter++;
 }
+
+/**Makes everything faster */
+void Door::faster()
+{
+	vX = vX*2;
+	vY = vY*2;
+
+}

@@ -20,7 +20,8 @@ class Father : public Thing {
 		void move(); /** Move */
 		int getType(); /** Returns type */
 		int type; /** number of type */
-		bool isOpen; /** Nothing */		
+		bool isOpen; /** Nothing */
+		void faster(); /** Moves faster */		
 	
 	private:
 		int x; /** position X*/

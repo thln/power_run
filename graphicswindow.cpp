@@ -74,6 +74,7 @@ GraphicsWindow::GraphicsWindow()  {
 	score = 0;
 	flinchcount = 0;
 	batteryOn = false;
+	doublespeed = false;
 
 }
 
@@ -198,6 +199,16 @@ void GraphicsWindow::update()
 		counter = 0;
 	}
 
+	if( index == 500 && !doublespeed)
+	{
+		for(unsigned int i=0; i<MyThings.size(); i++)
+		{
+				MyThings[i]->faster();	
+		}
+	
+		doublespeed = true;
+	}
+
 	if(counter%10 == 0)
 	{
 		setBackgroundBrush(MyBackground[imageindex]);
@@ -262,6 +273,8 @@ void GraphicsWindow::update()
 		
 		}
 	}
+	
+	
 	
 	
 	//if invincible or just hit

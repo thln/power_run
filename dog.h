@@ -21,6 +21,7 @@ class Dog : public Thing {
 		int getType();	/** Returns type  */
 		int type; /** the type */
 		bool isOpen; /** Nothing */	
+		void faster(); /** Moves faster */
 	
 	private:
 		int x; /** position X */

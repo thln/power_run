@@ -45,3 +45,11 @@ void Dog::move()
 	}
 	counter++;
 }
+
+/**Makes everything faster */
+void Dog::faster()
+{
+	vX = vX*2;
+	vY = vY*2;
+
+}

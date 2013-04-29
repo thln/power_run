@@ -19,7 +19,8 @@ class Mother : public Thing {
 		void move(); /** Move */
 		int getType(); /** returns type */ 
 		int type; /** the Type */
-		bool isOpen; /** Nothing */	
+		bool isOpen; /** Nothing */
+		void faster(); /** Moves faster */	
 	
 	private:
 		int x; /** position X */

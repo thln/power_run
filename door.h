@@ -20,6 +20,7 @@ class Door : public Thing {
 		void move(); /** moves */
 		int getType(); /** returns type */
 		int type; /** the type */ 
+		void faster(); /** Moves faster */
 	
 	private:
 		int x; /** position X */

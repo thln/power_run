@@ -49,3 +49,9 @@ void battery::move()
 
 counter++;
 }
+
+/**Makes everything faster */
+void battery::faster()
+{
+
+}

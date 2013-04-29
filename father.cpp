@@ -40,3 +40,11 @@ void Father::move()
 		y += vY;
 		setPos(x, y);
 }
+
+/**Makes everything faster */
+void Father::faster()
+{
+	vX = vX*2;
+	vY = vY*2;
+
+}
