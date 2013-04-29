@@ -31,6 +31,7 @@ GraphicsWindow::GraphicsWindow()  {
     setSceneRect(0, 0, 780, 500);
     setWindowTitle( "Programming Assignment #5: Power Run!");
     isAlive = false;
+    lastcase = 0;
     //view = new QGraphicsView( scene );
 
     //To fill a rectangle use a QBrush. To draw the border of a shape, use a QPen
@@ -161,7 +162,7 @@ GraphicsWindow::~GraphicsWindow()
     timer->stop();
     //delete MyThings;
     //delete MyBackground;
-    for(int i=0; i<MyThings.size(); i++)
+    for(unsigned int i=0; i<MyThings.size(); i++)
     {
     	delete MyThings[i];
     }   
@@ -199,8 +200,11 @@ void GraphicsWindow::update()
 	//			index++;
 				break;
 			case 4:
+				if(lastcase != 4)
+				{
 				MyThings.push_back(new Door);
 				scene->addItem(MyThings[MyThings.size()-1]);
+				}
 	//			MyThings[index]->move();
 	//			index++;
 				break;
@@ -212,7 +216,8 @@ void GraphicsWindow::update()
 				break;
 			
 		}
-		for(int i=0; i<MyThings.size(); i++)
+		lastcase = num;
+		for(unsigned int i=0; i<MyThings.size(); i++)
 		{
 	//			cout << "Hi" << endl;
 				MyThings[i]->move();	
@@ -241,12 +246,20 @@ void GraphicsWindow::update()
 	score += (3000/index); 
 //	MyScore.push_back(scoreBox(score));
 //	MyScore.pop();
+
+	if(lives == 0)
+	{
+		scene->addItem(new closingScreen);
+		timer->stop();	
+	}
 }
 
 void GraphicsWindow::startgame()
 {
 //	cout << "Error?" << endl;
 	index = 3000;
+	score = 0; 
+	lives = 5;
 
 	timer->start();
 
@@ -260,13 +273,19 @@ void GraphicsWindow::startgame()
 
 void GraphicsWindow::pausegame()
 {
-	if(timer->isActive())
+	if(lives != 0)
 	{
-		timer->stop();
-	}
-	else if(!timer->isActive())
-	{
-		timer->start();			
+		if(timer->isActive())
+		{
+			pause = new pauseScreen;
+			scene->addItem(pause);
+			timer->stop();
+		}
+		else if(!timer->isActive())
+		{
+			scene->removeItem(pause);
+			timer->start();			
+		}
 	}
 }
 
@@ -278,4 +297,9 @@ QTimer *GraphicsWindow::getTimer()
 double GraphicsWindow::getScore()
 {
 	return score;
+}
+
+int GraphicsWindow::getLife()
+{
+	return lives;
 }

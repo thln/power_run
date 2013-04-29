@@ -67,7 +67,7 @@ if(positionY == floor)
 }
 }
 
-void MainPlayer::move(int x, int y)
+void MainPlayer::move(int x)
 {
 	if(parent->getTimer()->isActive())
 	{

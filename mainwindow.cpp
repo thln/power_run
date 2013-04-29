@@ -49,7 +49,11 @@ MainWindow::MainWindow()
 
 	scoreOutput = new QLineEdit;
 	scoreOutput->setReadOnly(true);
-	tool->addWidget("Score: ", scoreOutput);
+	tool->addWidget(scoreOutput);
+
+	lifeOutput = new QLineEdit;
+	lifeOutput->setReadOnly(true);
+	tool->addWidget(lifeOutput);
 
 //	tool->show();
 	
@@ -130,14 +134,14 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Left Arrow Key pushed
 			//if(!gw->getPlayer()->jumping)
 			//{
-				gw->getPlayer()->move(-8,0);
+				gw->getPlayer()->move(-8);
 			 //}
 			 break;
 		case Qt::Key_Right :
 			//Right Arrow Key pushed
 			//if(!gw->getPlayer()->jumping)
 			//{
-				gw->getPlayer()->move(8,0);
+				gw->getPlayer()->move(8);
 			//}
 			 break;
 		case Qt::Key_Up : 
@@ -173,6 +177,8 @@ void MainWindow::startGame()
 	gw->setBackgroundBrush(QImage("images/testbackground.png"));
 	gw->setCacheMode(QGraphicsView::CacheBackground);
 	setCentralWidget(gw);
+	
+	  connect(gw->getTimer(), SIGNAL(timeout()), this, SLOT(update()));
 
 
 
@@ -309,4 +315,15 @@ void MainWindow::quitGame()
 bool MainWindow::clickedstate()
 {
 	return false;
+}
+
+void MainWindow::update()
+{
+	scoreOutput->setText(QString::number(gw->getScore()));
+	lifeOutput->setText(QString::number(gw->getLife()));
+	
+//	if(gw->getLife() == 0)
+//	{
+	//gameover
+//	}
 }

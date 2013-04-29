@@ -29,6 +29,8 @@
 #include "platformobject.h"
 #include "door.h"
 #include "dog.h"
+#include "closingscreen.h"
+#include "pausescreen.h"
 //#include "scorebox.h"
 
 using namespace std;
@@ -56,6 +58,7 @@ public:
 	bool isAlive;
 	QTimer *getTimer();
 	double getScore();
+	int getLife();
     
 private:
     QGraphicsScene *scene; /** What is being displayed */
@@ -66,6 +69,7 @@ private:
  //   	Mother *test;
     vector<Thing*> MyThings;
     vector<QImage> MyBackground;
+    pauseScreen *pause;
     //vector<scoreBox> MyScore;
 
    	QPushButton *buttonclick; /** Nothing */
@@ -74,6 +78,7 @@ private:
    	int imageindex;
    	double score;
    	int lives;
+   	int lastcase;
   // 	int counter;
 
 public slots:

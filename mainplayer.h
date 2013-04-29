@@ -25,7 +25,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		void setVelocity(double x, double y);
 		void setVelocityY(double y);
 //		void KeyPressEvent(QKeyEvent *e);
-		void move(int x, int y);
+		void move(int x);
 		void movejump();
 		void moveduck();
 		bool jumping;

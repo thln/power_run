@@ -50,6 +50,7 @@ private:
 	startScreenWindow *startscreen;
 	QString name;
 	QLineEdit *scoreOutput;
+	QLineEdit *lifeOutput;
 	GraphicsWindow *gw; /** Your graphics Window */
 //	QRadioButton *mhChoice; /** Radio button choice for manhattan heuristic */
 //	QRadioButton *ooohChoice; /** Radio button choice for out of order heuristic */
@@ -66,6 +67,7 @@ public slots:
 	void pauseGame(); /** slot for pausing game */
 	void quitGame(); /** slot for quitting the game */
 	bool clickedstate(); /** slot to check if it was clicked or not */
+	void update();
 
 };
 
