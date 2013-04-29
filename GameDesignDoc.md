@@ -34,6 +34,7 @@ The **score** will automatically keep increasing. The **longer** you are playing
 > Your dad will randomly be running towards you carrying a tv over his head. He's not trying to find you, but if you don't duck, you will hit the TV, and you will lose a "life."
 
 ##### 5. Battery
+![alt text]( images/battery.png "Power Run!")
 > You might be running low on energy, but batteries luckily give you a life, an extra 1000 points, AND temporary invincibility!
 
 
