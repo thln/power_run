@@ -47,7 +47,7 @@ MainWindow::MainWindow()
 	connect( quitGameAction, SIGNAL(triggered() ), this, SLOT(quitGame() ));
 
 	label1 = new QLabel;
-	label1->setText("score");
+	label1->setText("Score: ");
 	tool->addWidget(label1);
 
 	scoreOutput = new QLineEdit;
@@ -55,7 +55,7 @@ MainWindow::MainWindow()
 	tool->addWidget(scoreOutput);
 
 	label2 = new QLabel;
-	label2->setText("score");
+	label2->setText("Lives: ");
 	tool->addWidget(label2);
 
 	lifeOutput = new QLineEdit;
