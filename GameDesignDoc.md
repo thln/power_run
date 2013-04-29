@@ -2,6 +2,7 @@
 ----
 
 ## Overview
+![alt text]( images/openingscreen.png "Always")
 We've all been there.
 You are using your laptop in the living room when you a popup notifies you that your laptop's battery life is low.
 The whole premise of the game is that you are trying to run to your laptop charger before your laptop dies.
@@ -22,25 +23,29 @@ The **score** will automatically keep increasing. The **longer** you are playing
 
 ## The 5 Different Items
 ##### 1. Your Dog
+![alt text]( images/dog.png "dog")
 > Your dog will randomly appear from behind you, chase you, and bark. If your dog catches you, you will be distracted and thus want to pet it, causing you to lose a "life." 
 
 ##### 2. Your Mom
+![alt text]( images/testmom1.png "Mom")
 > Your mom will randomly appear on screen moving back and forth, calling for your name. If you run into your mom, your mom will demand you do a chore, causing you to lose a "life."
 
 ##### 3. Doors
+![alt text]( images/doorclosed.png "Doors")
 > Your sister likes tends to forget a lot of stuff, so she will randomly open and close doors while she searches for her items in the background. If you run into an open door, you will hurt yourself, causing you to lose a "life."
 
 ##### 4. Your Dad
+![alt text]( images/packagedad.png "Dad")
 > Your dad will randomly be running towards you carrying a tv over his head. He's not trying to find you, but if you don't duck, you will hit the TV, and you will lose a "life."
 
 ##### 5. Battery
-![alt text]( images/battery.png "Power Run!")
+![alt text]( images/battery.png "Battery")
 > You might be running low on energy, but batteries luckily give you a life, an extra 1000 points, AND temporary invincibility!
 
 
 
 ## Example Gameplay Screen
-![alt text](http://i229.photobucket.com/albums/ee242/AsadaAsada/b5e026b8-b6f2-458a-8f2c-6b364513d39c_zps0a707ac5.jpg "Power Run!")
+![alt text]( images/examplescreen.png "Power Run!")
 ----
 ----
 ----
