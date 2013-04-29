@@ -17,7 +17,7 @@ class Father : public Thing {
 		Father(); /** Constructor */
 		Father(QPixmap *p, int nx, int ny); /** Constructor */
 		~Father(); /** Destructor */
-		bool left; /** Nothing */
+		bool left; /** Nothing */ 
 		void move(); /** Move */
 		int getType(); /** Returns type */
 		int type; /** number of type */
