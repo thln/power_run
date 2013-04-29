@@ -74,7 +74,7 @@ GraphicsWindow::GraphicsWindow()  {
 	lives = 5;
 	score = 0;
 	flinchcount = 0;
-	onTable = false;
+	batteryOn = false;
 
 //	MyScore.push_back(scoreBox(score));
 
@@ -186,7 +186,7 @@ void GraphicsWindow::update()
 			case 3:
 				if(lastcase > 5)
 				{
-				MyThings.push_back(new PlatformObject);
+				MyThings.push_back(new battery);
 				scene->addItem(MyThings[MyThings.size()-1]);
 				}
 	//			MyThings[index]->move();
@@ -236,6 +236,7 @@ void GraphicsWindow::update()
 		}
 	}	
 	
+	//onTable = false;
 	//checking for collisions
 	for(int i=0; i< MyThings.size(); i++)
 	{
@@ -269,25 +270,14 @@ void GraphicsWindow::update()
 					invincible = true;
 				}
 			}
-			//Platform Object
+			//Battery
 			if(item->getType() == 4)
 			{
-			Player1->setFloor();
-			onTable = true;
-			/*
-				lives--;
-				Player1->flinching();
 				invincible = true;
-				*/
+				batteryOn = true;
+				lives++;
+				score+= 1000;
 			}
-			else
-			{
-				onTable = false;
-			}
-			//else(item->getType() != 4)
-			//{
-			//	Player1->resetFloor();
-			//}
 			//Dog
 			if(item->getType() == 5)
 			{
@@ -299,10 +289,6 @@ void GraphicsWindow::update()
 		}
 	}
 	
-	//if(!onTable)
-	//{
-	//	Player1->resetFloor();
-	//}
 	
 	//if invincible or just hit
 	if(invincible)
@@ -313,7 +299,11 @@ void GraphicsWindow::update()
 	if(flinchcount == 300)
 	{
 		invincible = false;
+		if(!batteryOn)
+		{
 		Player1->flinching();
+		}
+		batteryOn = false;
 		flinchcount = 0;
 	}
 

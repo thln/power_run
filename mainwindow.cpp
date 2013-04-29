@@ -134,7 +134,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Left Arrow Key pushed
 			//if(!gw->getPlayer()->jumping)
 			//{
-				gw->getPlayer()->resetFloor();
+				//gw->getPlayer()->resetFloor();
 				gw->getPlayer()->move(-8);
 			 //}
 			 break;
@@ -142,7 +142,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Right Arrow Key pushed
 			//if(!gw->getPlayer()->jumping)
 			//{
-				gw->getPlayer()->resetFloor();			
+				//gw->getPlayer()->resetFloor();			
 				gw->getPlayer()->move(8);
 			//}
 			 break;
@@ -150,7 +150,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			//Up Arrow Key pushed
 				if(!gw->getPlayer()->jumping)
 				{
-				gw->getPlayer()->resetFloor();
+				//gw->getPlayer()->resetFloor();
 				gw->getPlayer()->setVelocityY(-16);
 				gw->getPlayer()->movejump();
 				}
@@ -158,7 +158,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 			break;		
 		case Qt::Key_Down : 
 			//Down Arrow Key pushed
-			gw->getPlayer()->resetFloor();
+			//gw->getPlayer()->resetFloor();
 			gw->getPlayer()->moveduck();
 			break;
 	};

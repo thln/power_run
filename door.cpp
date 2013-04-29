@@ -54,10 +54,10 @@ void Door::move()
 
 if(counter%600 == 0)
 {	
-	isOpen = true;
 	setPixmap(*pixMap2);
+	isOpen = true;
 }
-if(counter%1201 == 0)
+if(counter%1200 == 0)
 {
 	isOpen = false;
 	setPixmap(*pixMap1);

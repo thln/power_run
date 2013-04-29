@@ -33,8 +33,8 @@ The **score** will automatically keep increasing. The **longer** you are playing
 ##### 4. Your Dad
 > Your dad will randomly be running towards you carrying a tv over his head. He's not trying to find you, but if you don't duck, you will hit the TV, and you will lose a "life."
 
-##### 5. Desks, tables, bookcases, etc.
-> You will be trying to avoid many obstacles, so you can try to jump onto or off one of these **stationary** items. You can only run on them for 1.5 seconds, and they will break after you jump off.
+##### 5. Battery
+> You might be running low on energy, but batteries luckily give you a life, an extra 1000 points, AND temporary invincibility!
 
 
 

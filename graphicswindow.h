@@ -26,7 +26,7 @@
 #include "thing.h"
 #include "mother.h"
 #include "father.h"
-#include "platformobject.h"
+#include "battery.h"
 #include "door.h"
 #include "dog.h"
 #include "closingscreen.h"
@@ -60,7 +60,7 @@ public:
 	double getScore();
 	int getLife();
 	bool invincible;
-	bool onTable;
+	bool batteryOn;
     
 private:
     QGraphicsScene *scene; /** What is being displayed */
@@ -82,6 +82,7 @@ private:
    	int lives;
    	int lastcase;
    	int flinchcount;
+   	int tempFloor;
   // 	int counter;
 
 public slots:
