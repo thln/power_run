@@ -19,6 +19,7 @@ MainWindow::MainWindow()
 
 	startscreen = new startScreenWindow;
 	setCentralWidget(startscreen);
+	startscreencheck = true;
 //	gw = new GraphicsWindow;
 //	gw->setBackgroundBrush(QImage("images/testbackground.png"));
 //	gw->setCacheMode(QGraphicsView::CacheBackground);
@@ -160,9 +161,11 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 /** Slot to start game */
 void MainWindow::startGame()
 {
-
+	if(startscreencheck)
+	{
 	delete startscreen;
-
+	startscreencheck = false;
+	}
 
 	gw = new GraphicsWindow;
 	gw->setBackgroundBrush(QImage("images/testbackground.png"));

@@ -40,12 +40,13 @@ void Door::move()
 		y += vY;
 		setPos(x, y);
 
-if(counter%600 == 0)
+if(counter%600 == 0 && isOpen == false)
 {	
 	setPixmap(*pixMap2);
 	isOpen = true;
 }
-if(counter%1200 == 0)
+//if(counter%1200 == 0)
+else
 {
 	isOpen = false;
 	setPixmap(*pixMap1);

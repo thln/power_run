@@ -49,6 +49,7 @@ private:
 	QLabel *label1;
 	QLabel *label2;
 	GraphicsWindow *gw; /** Your graphics Window */
+	bool startscreencheck;
 
 public slots:
 	void startGame(); /** slot for starting the game */
