@@ -15,7 +15,6 @@ class Dog : public Thing {
 
 	public:
 		Dog(); /** Constructor */
-		Dog(QPixmap *p, int nx, int ny); /** Constructor */
 		~Dog(); /** Destructor */
 		bool left; /** Nothing */
 		void move(); /** Move */

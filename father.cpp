@@ -29,12 +29,6 @@ int Father::getType()
 	return type;
 }
 
-/** Constructor */
-Father::Father(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
-{
-
-
-}
 
 /** Move */
 void Father::move()

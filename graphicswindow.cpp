@@ -212,7 +212,7 @@ void GraphicsWindow::update()
 	
 	//onTable = false;
 	//checking for collisions
-	for(int i=0; i< MyThings.size(); i++)
+	for(unsigned int i=0; i< MyThings.size(); i++)
 	{
 		Thing* item = MyThings[i];
 		if(Player1->collidesWithItem(item) && !invincible)

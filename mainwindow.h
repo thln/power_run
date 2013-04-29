@@ -19,6 +19,7 @@
 #include "startscreenwindow.h"
 #include <QInputDialog>
 #include <QDir>
+#include <QLabel>
 
 
 using namespace std;
@@ -45,6 +46,8 @@ private:
 	QString name; /** Name of player */
 	QLineEdit *scoreOutput; /** outputs score */
 	QLineEdit *lifeOutput; /** out puts number of lives */
+	QLabel *label1;
+	QLabel *label2;
 	GraphicsWindow *gw; /** Your graphics Window */
 
 public slots:

@@ -22,12 +22,6 @@ battery::~battery()
 	delete pixMap1;
 }
 
-/** Constructor */
-battery::battery(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
-{
-
-
-}
 
 /** Returns type */
 int battery::getType()

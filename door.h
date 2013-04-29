@@ -15,7 +15,6 @@ class Door : public Thing {
 
 	public:
 		Door(); /** Constructor */
-		Door(QPixmap *p, int nx, int ny); /** Constructor */
 		~Door(); /** Destructor */
 		bool isOpen; /** checks if open */
 		void move(); /** moves */

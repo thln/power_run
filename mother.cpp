@@ -22,13 +22,6 @@ Mother::~Mother()
 	delete pixMap2;
 }
 
-/** Constructor */
-Mother::Mother(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
-{
-
-
-}
-
 /** Returns type */
 int Mother::getType()
 {

@@ -23,12 +23,6 @@ Door::~Door()
 	delete pixMap2;
 }
 
-/** Constructor */
-Door::Door(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
-{
-
-
-}
 
 /** Returns type */
 int Door::getType()

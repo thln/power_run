@@ -15,7 +15,6 @@ class Mother : public Thing {
 
 	public:
 		Mother(); /** Constructor */
-		Mother(QPixmap *p, int nx, int ny); /** Constructor */
 		~Mother(); /** Destructor */
 		void move(); /** Move */
 		int getType(); /** returns type */ 

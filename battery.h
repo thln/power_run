@@ -15,7 +15,6 @@ class battery : public Thing {
 
 	public:
 		battery(); /** Constructor */
-		battery(QPixmap *p, int nx, int ny); /** Constructor */
 		~battery(); /** Destructor */
 		bool left; /** Nothing */
 		void move(); /** Move */

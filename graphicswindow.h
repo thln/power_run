@@ -72,7 +72,7 @@ private:
    	QPushButton *buttonclick; /** Nothing */
    	int counter; /** Nothing */
    	int index; /** a counter */
-   	int imageindex;/** a counter */
+   	unsigned int imageindex;/** a counter */
    	double score;/** score */
    	int lives;/** lives */
    	int lastcase; /** no doubles */

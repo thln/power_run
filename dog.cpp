@@ -22,13 +22,6 @@ Dog::~Dog()
 
 }
 
-/** Constructor */
-Dog::Dog(QPixmap *p, int nx, int ny) 
-{
-
-
-}
-
 
 /** Returns type */
 int Dog::getType()
