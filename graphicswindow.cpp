@@ -31,6 +31,7 @@ GraphicsWindow::GraphicsWindow()  {
     setSceneRect(0, 0, 780, 500);
     setWindowTitle( "Programming Assignment #5: Power Run!");
     isAlive = false;
+    invincible = false;
     lastcase = 0;
     //view = new QGraphicsView( scene );
 
@@ -50,40 +51,6 @@ GraphicsWindow::GraphicsWindow()  {
 //adding pictures in for animation
 	imageindex = 0;
 
-/*
-		pic1 = new QPixmap("images/testbackground1.png");
-	setPixmap(*pic1);
-		pic2 = new QPixmap("images/testbackground2.png");
-	setPixmap(*pic2);
-		pic3 = new QPixmap("images/testbackground3.png");
-	setPixmap(*pic3);
-		pic4 = new QPixmap("images/testbackground4.png");
-	setPixmap(*pic4);
-		pic5 = new QPixmap("images/testbackground5.png");
-	setPixmap(*pic5);
-		pic6 = new QPixmap("images/testbackground6.png");
-	setPixmap(*pic6);
-		pic7 = new QPixmap("images/testbackground7.png");
-	setPixmap(*pic7);
-		pic8 = new QPixmap("images/testbackground8.png");
-	setPixmap(*pic8);
-		pic9 = new QPixmap("images/testbackground9.png");
-	setPixmap(*pic9);
-		pic10 = new QPixmap("images/testbackground10.png");
-	setPixmap(*pic);
-		pic11 = new QPixmap("images/testbackground11.png");
-	setPixmap(*pic);
-		pic12 = new QPixmap("images/testbackground12.png");
-	setPixmap(*pic);
-		pic13 = new QPixmap("images/testbackground13.png");
-	setPixmap(*pic);
-		pic14 = new QPixmap("images/testbackground14.png");
-	setPixmap(*pic);
-		pic15 = new QPixmap("images/testbackground15.png");
-	setPixmap(*pic);
-		pic16 = new QPixmap("images/testbackground16.png");
-	setPixmap(*pic);
-*/	
 	
 	MyBackground.push_back(QImage("images/testbackground1.png"));
 	MyBackground.push_back(QImage("images/testbackground2.png"));
@@ -106,6 +73,8 @@ GraphicsWindow::GraphicsWindow()  {
 
 	lives = 5;
 	score = 0;
+	flinchcount = 0;
+	onTable = false;
 
 //	MyScore.push_back(scoreBox(score));
 
@@ -145,8 +114,23 @@ void GraphicsWindow::deletePlayer()
 	if(isAlive)
 	{
 	//	cout << "restarting" << endl;
+		timer->stop();
 		delete Player1;
+		for(unsigned int i=0; i<MyThings.size(); i++)
+		{
+			delete MyThings[i];
+		}   
+		
+			lives = 5;
+			score = 0;
+			flinchcount = 0;
+			invincible = false;
+			lastcase = 0;
+			counter = 0;		
+		
 		isAlive = false;
+		
+		
 	}
 	//	cout << "hi " << endl;
 }
@@ -182,25 +166,34 @@ void GraphicsWindow::update()
 		switch(num) 
 		{
 			case 1:
+				if(lastcase > 5)
+				{
 				MyThings.push_back(new Mother);
 				scene->addItem(MyThings[MyThings.size()-1]);
+				}
 	//			MyThings[index]->move();
 	//			index++;
 				break;
 			case 2:
+				if(lastcase > 5)
+				{
 				MyThings.push_back(new Father);
 				scene->addItem(MyThings[MyThings.size()-1]);
+				}
 	//			MyThings[index]->move();
 	//			index++;
 				break;
 			case 3:
+				if(lastcase > 5)
+				{
 				MyThings.push_back(new PlatformObject);
 				scene->addItem(MyThings[MyThings.size()-1]);
+				}
 	//			MyThings[index]->move();
 	//			index++;
 				break;
 			case 4:
-				if(lastcase != 4)
+				if(lastcase > 5)
 				{
 				MyThings.push_back(new Door);
 				scene->addItem(MyThings[MyThings.size()-1]);
@@ -242,6 +235,88 @@ void GraphicsWindow::update()
 			imageindex = 0;
 		}
 	}	
+	
+	//checking for collisions
+	for(int i=0; i< MyThings.size(); i++)
+	{
+		Thing* item = MyThings[i];
+		if(Player1->collidesWithItem(item) && !invincible)
+		{
+			//Mom
+			if(item->getType() == 1)
+			{
+				lives--;
+				Player1->flinching();
+				invincible = true;
+			}
+			//Father
+			if(item->getType() == 2)
+			{
+				if(!Player1->ducking)
+				{
+					lives--;
+					Player1->flinching();
+					invincible = true;
+				}
+			}
+			//Door
+			if(item->getType() == 3)
+			{
+				if(item->isOpen)
+				{
+					lives--;
+					Player1->flinching();
+					invincible = true;
+				}
+			}
+			//Platform Object
+			if(item->getType() == 4)
+			{
+			Player1->setFloor();
+			onTable = true;
+			/*
+				lives--;
+				Player1->flinching();
+				invincible = true;
+				*/
+			}
+			else
+			{
+				onTable = false;
+			}
+			//else(item->getType() != 4)
+			//{
+			//	Player1->resetFloor();
+			//}
+			//Dog
+			if(item->getType() == 5)
+			{
+				lives--;
+				Player1->flinching();
+				invincible = true;
+			}		
+		
+		}
+	}
+	
+	//if(!onTable)
+	//{
+	//	Player1->resetFloor();
+	//}
+	
+	//if invincible or just hit
+	if(invincible)
+	{
+		flinchcount++;
+	}
+	//approx 300 counts, then character is vulnerable again
+	if(flinchcount == 300)
+	{
+		invincible = false;
+		Player1->flinching();
+		flinchcount = 0;
+	}
+
 
 	score += (3000/index); 
 //	MyScore.push_back(scoreBox(score));

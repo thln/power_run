@@ -9,6 +9,8 @@ Dog::Dog()
 	setPixmap(*pixMap1);
 	x = 0;
 	y = 350;
+	type = 5;
+	isOpen = false;
 	setPos(x, y);
 	left = true;
 
@@ -35,6 +37,11 @@ void Dog::go()
 	timer->start();
 }
 */
+
+int Dog::getType()
+{
+	return type;
+}
 
 void Dog::move()
 {

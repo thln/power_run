@@ -10,7 +10,9 @@ PlatformObject::PlatformObject()
 	x = 700;
 	y = 275;
 	setPos(x, y);
+	type = 4;
 	left = true;
+	isOpen = false;
 
 //	timer = new QTimer();
 //	timer->setInterval(50);
@@ -35,6 +37,11 @@ void PlatformObject::go()
 	timer->start();
 }
 */
+
+int PlatformObject::getType()
+{
+	return type;
+}
 
 void PlatformObject::move()
 {

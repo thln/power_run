@@ -9,6 +9,9 @@ class Thing: public QObject, public QGraphicsPixmapItem {
 	public:
 //		Thing(QPixmap *p, int nx, int ny);
 		virtual void move() = 0;
+		virtual int getType() = 0;
+		int type;
+		bool isOpen;
 //		virtual void go() = 0;
 		
 	private:

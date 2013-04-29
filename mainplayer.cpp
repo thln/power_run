@@ -22,6 +22,7 @@ MainPlayer::MainPlayer(GraphicsWindow *p, QString name)
 
 	pic = new QPixmap("images/mainplayerimage.png");
 	picduck = new QPixmap("images/testcharacterduck.png");	
+	picflinch = new QPixmap("images/testcharacterflinch.png");	
 	setPixmap(*pic);
 	positionX = 100;
 	positionY = 300;
@@ -30,6 +31,7 @@ MainPlayer::MainPlayer(GraphicsWindow *p, QString name)
 
 	jumping = false;
 	ducking = false; 
+	flinch = false;
 //	isAlive = true;
 	//velocityY = -10;
 	
@@ -57,6 +59,16 @@ void MainPlayer::movejump()
 	timer->start();
 }
 
+void MainPlayer::setFloor()
+{
+	floor = positionY;
+}
+
+void MainPlayer::resetFloor()
+{
+	floor = 300;
+}
+
 void MainPlayer::jumpCheck()
 {
 if(positionY == floor)
@@ -72,7 +84,10 @@ void MainPlayer::move(int x)
 	if(parent->getTimer()->isActive())
 	{
 		ducking = false;
-		setPixmap(*pic);
+		if(!flinch)
+		{
+			setPixmap(*pic);
+		}
 		if( ((positionX < 0) && x<0) || ((positionX > 700) && x>1) )
 		{
 	//		velocityX= -velocityX;
@@ -105,7 +120,10 @@ void MainPlayer::jump()
 	if(parent->getTimer()->isActive())
 	{
 		ducking = false;
-		setPixmap(*pic);
+		if(!flinch)
+		{
+			setPixmap(*pic);
+		}
 
 		jumping = true;
 
@@ -137,5 +155,20 @@ void MainPlayer::moveduck()
 {
 	ducking = true;
 	setPixmap(*picduck);
+
+}
+
+void MainPlayer::flinching()
+{
+	if(!flinch)
+	{
+		flinch = true;
+		setPixmap(*picflinch);
+	}
+	else if(flinch)
+	{
+		flinch = false;
+		setPixmap(*pic);
+	}
 
 }

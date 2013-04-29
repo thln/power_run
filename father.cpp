@@ -9,6 +9,8 @@ Father::Father()
 	setPixmap(*pixMap1);
 	x = 700;
 	y = 225;
+	type = 2;
+	isOpen = false;
 	setPos(x, y);
 	left = true;
 
@@ -22,6 +24,11 @@ Father::~Father()
 {
 	delete pixMap1;
 
+}
+
+int Father::getType()
+{
+	return type;
 }
 
 Father::Father(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)

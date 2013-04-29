@@ -10,6 +10,7 @@ Door::Door()
 	x = 700;
 	y = 150;
 	setPos(x, y);
+	type = 3;
 	isOpen = false;
 
 //	timer = new QTimer();
@@ -36,6 +37,11 @@ void Door::go()
 	timer->start();
 }
 */
+
+int Door::getType()
+{
+	return type;
+}
 
 void Door::move()
 {

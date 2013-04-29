@@ -10,6 +10,8 @@ Mother::Mother()
 	x = 700;
 	y = 300;
 	setPos(x, y);
+	type = 1;
+	isOpen = false;
 //	left = true;
 
 //	timer = new QTimer();
@@ -36,6 +38,11 @@ void Mother::go()
 	timer->start();
 }
 */
+
+int Mother::getType()
+{
+	return type;
+}
 
 void Mother::move()
 {

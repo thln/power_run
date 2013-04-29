@@ -59,6 +59,8 @@ public:
 	QTimer *getTimer();
 	double getScore();
 	int getLife();
+	bool invincible;
+	bool onTable;
     
 private:
     QGraphicsScene *scene; /** What is being displayed */
@@ -79,6 +81,7 @@ private:
    	double score;
    	int lives;
    	int lastcase;
+   	int flinchcount;
   // 	int counter;
 
 public slots:

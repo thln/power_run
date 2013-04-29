@@ -14,7 +14,9 @@ class Door : public Thing {
 		~Door();
 //		void go();
 		bool isOpen;
-		void move();	
+		void move();
+		int getType();
+		int type;	
 	
 	private:
 		int x;

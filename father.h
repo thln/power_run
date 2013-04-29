@@ -14,7 +14,10 @@ class Father : public Thing {
 		~Father();
 //		void go();
 		bool left;
-		void move();	
+		void move();
+		int getType();
+		int type;
+		bool isOpen;		
 	
 	private:
 		int x;

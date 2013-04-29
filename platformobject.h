@@ -14,7 +14,10 @@ class PlatformObject : public Thing {
 		~PlatformObject();
 //		void go();
 		bool left;
-		void move();	
+		void move();
+		int getType();	
+		int type;
+		bool isOpen;	
 	
 	private:
 		int x;

@@ -30,8 +30,12 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		void moveduck();
 		bool jumping;
 		bool ducking;
+		bool flinch;
 		void jumpCheck();
 		QString getName();
+		void flinching();
+		void setFloor();
+		void resetFloor();
 //		bool isAlive;
 	
 	private:
@@ -39,6 +43,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		QGraphicsSimpleTextItem* nameID;
 		QPixmap *pic;
 		QPixmap *picduck;
+		QPixmap *picflinch;
 		QString name_;
 		double velocityX;
 		double velocityY;
