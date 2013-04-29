@@ -2,10 +2,10 @@
 
 using namespace std;
 
+/** Constructor */
 battery::battery()
 {
 	pixMap1 = new QPixmap("images/battery.png");
-//	pixMap2 = new QPixmap("testmom2.png");
 	setPixmap(*pixMap1);
 	x = 700;
 	y = 10;
@@ -14,35 +14,28 @@ battery::battery()
 	left = true;
 	isOpen = false;
 
-//	timer = new QTimer();
-//	timer->setInterval(50);
-//	connect(timer, SIGNAL(timeout()), this, SLOT(move()));
-
 }
 
+/** Destructor */
 battery::~battery()
 {
 	delete pixMap1;
 }
 
+/** Constructor */
 battery::battery(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
 {
 
 
 }
 
-/*
-void battery::go()
-{
-	timer->start();
-}
-*/
-
+/** Returns type */
 int battery::getType()
 {
 	return type;
 }
 
+/** Move */
 void battery::move()
 {
 //implement move

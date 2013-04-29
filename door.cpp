@@ -2,6 +2,7 @@
 
 using namespace std;
 
+/** Constructor */
 Door::Door()
 {
 	pixMap1 = new QPixmap("images/doorclosed.png");
@@ -13,36 +14,29 @@ Door::Door()
 	type = 3;
 	isOpen = false;
 
-//	timer = new QTimer();
-//	timer->setInterval(50);
-//	connect(timer, SIGNAL(timeout()), this, SLOT(move()));
-
 }
 
+/** Destructor */
 Door::~Door()
 {
 	delete pixMap1;
 	delete pixMap2;
 }
 
+/** Constructor */
 Door::Door(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
 {
 
 
 }
 
-/*
-void Door::go()
-{
-	timer->start();
-}
-*/
-
+/** Returns type */
 int Door::getType()
 {
 	return type;
 }
 
+/** Move */
 void Door::move()
 {
 //implement move

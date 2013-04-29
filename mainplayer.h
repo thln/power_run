@@ -11,6 +11,11 @@
 #include <QBrush>
 
 
+/**
+	* This class is used to keep track of Main Player.
+	* Inherits from QGraphicsPixmapItem.
+	* @author Tam Henry Le Nguyen */
+
 using namespace std;
 
 class GraphicsWindow;
@@ -19,44 +24,42 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 	Q_OBJECT
 
 	public:
-		MainPlayer();
-		MainPlayer(GraphicsWindow *p, QString name);
-		~MainPlayer();
-		void setVelocity(double x, double y);
-		void setVelocityY(double y);
-//		void KeyPressEvent(QKeyEvent *e);
-		void move(int x);
-		void movejump();
-		void moveduck();
-		bool jumping;
-		bool ducking;
-		bool flinch;
-		void jumpCheck();
-		QString getName();
-		void flinching();
-		void setFloor();
-		void resetFloor();
+		MainPlayer(); /** Constructor */
+		MainPlayer(GraphicsWindow *p, QString name); /** Constructor */
+		~MainPlayer(); /** Destructor */
+		void setVelocity(double x, double y); /** Velocity Setter */
+		void setVelocityY(double y); /** Velocity Setter*/
+		void move(int x); /** Velocity Setter */
+		void movejump(); /** Jump */
+		void moveduck(); /** Duck */
+		bool jumping; /** checks if jumping */
+		bool ducking; /** checks if ducking */
+		bool flinch; /** checks if flinching */
+		void jumpCheck(); /** connector */
+		QString getName(); /** returns name*/
+		void flinching(); /** flinches */
+		void setFloor(); /** Nothing */
+		void resetFloor(); /** Nothing */
 //		bool isAlive;
 	
 	private:
-		GraphicsWindow *parent;
-		QGraphicsSimpleTextItem* nameID;
-		QPixmap *pic;
-		QPixmap *picduck;
-		QPixmap *picflinch;
-		QString name_;
-		double velocityX;
-		double velocityY;
-//		QKeyevent *e;
-		double positionX;
-		double positionY;
-		double accelX;
-		double accelY;
-		QTimer *timer;
+		GraphicsWindow *parent; /** parent */
+		QGraphicsSimpleTextItem* nameID; /** name appears */
+		QPixmap *pic; /** first pic */
+		QPixmap *picduck; /** second pic */
+		QPixmap *picflinch; /** third pic */
+		QString name_; /** name */
+		double velocityX; /** velocity X*/
+		double velocityY; /** velocity Y*/
+		double positionX; /** positionX */
+		double positionY; /** position Y*/
+		double accelX; /** accel X */
+		double accelY; /** accel Y*/
+		QTimer *timer; /** timer */
 //		int counter;
-		double floor;
+		double floor; /** floor */
 
 	public slots:
-		void jump();
+		void jump(); /** makes character jump */
 };
 #endif

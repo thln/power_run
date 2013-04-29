@@ -5,32 +5,31 @@
 #include <QObject>
 #include <QTimer>
 
+/**
+	* This class is used to keep track of Battery.
+	* Inherits from Thing.
+	* @author Tam Henry Le Nguyen */
+
 class battery : public Thing {
 	Q_OBJECT
 
 	public:
-		battery();
-		battery(QPixmap *p, int nx, int ny);
-		~battery();
-//		void go();
-		bool left;
-		void move();
-		int getType();	
-		int type;
-		bool isOpen;	
+		battery(); /** Constructor */
+		battery(QPixmap *p, int nx, int ny); /** Constructor */
+		~battery(); /** Destructor */
+		bool left; /** Nothing */
+		void move(); /** Move */
+		int getType();	 /** Returns type */
+		int type; /** the type */
+		bool isOpen; /** Nothing */	
 	
 	private:
-		int x;
-		int y;
-		int vX;
-		int vY;
-		QPixmap *pixMap1;
-		QPixmap *pixMap2;
-		int counter;
-//		QTimer *timer;
-
-//	public slots:
-//		void move();
+		int x; /** position X */
+		int y; /** position Y */
+		int vX; /** velocity X */
+		int vY; /** velocity Y */
+		QPixmap *pixMap1; /** picture  */
+		int counter; /** counter */
 
 };
 

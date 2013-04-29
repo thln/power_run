@@ -2,6 +2,7 @@
 
 using namespace std;
 
+/** Constructor */
 openingScreen::openingScreen()
 {
 	pixMap1 = new QPixmap("images/openingscreen.png");
@@ -12,6 +13,7 @@ openingScreen::openingScreen()
 
 }
 
+/** Destructor */
 openingScreen::~openingScreen()
 {
 

@@ -9,18 +9,22 @@
 
 using namespace std;
 
+/**
+	* This class is used to keep track of startwindow.
+	* Inherits from QGraphicsView.
+	* @author Tam Henry Le Nguyen */
+
 class startScreenWindow : public QGraphicsView
 {
 	Q_OBJECT
 
 	public:
-		startScreenWindow();
-		~startScreenWindow();
+		startScreenWindow(); /** Constructor */
+		~startScreenWindow(); /** Destructor */
 
 	private:
-//		QPixmap *pixMap1;
  QGraphicsScene *scene; /** What is being displayed */
-    QGraphicsView *view;
+    QGraphicsView *view; /** the view */
 
 };
 

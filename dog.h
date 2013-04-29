@@ -5,32 +5,31 @@
 #include <QObject>
 #include <QTimer>
 
+/**
+	* This class is used to keep track of Dog.
+	* Inherits from Thing.
+	* @author Tam Henry Le Nguyen */
+
 class Dog : public Thing {
 	Q_OBJECT
 
 	public:
-		Dog();
-		Dog(QPixmap *p, int nx, int ny);
-		~Dog();
-//		void go();
-		bool left;
-		void move();
-		int getType();	
-		int type;
-		bool isOpen;	
+		Dog(); /** Constructor */
+		Dog(QPixmap *p, int nx, int ny); /** Constructor */
+		~Dog(); /** Destructor */
+		bool left; /** Nothing */
+		void move(); /** Move */
+		int getType();	/** Returns type  */
+		int type; /** the type */
+		bool isOpen; /** Nothing */	
 	
 	private:
-		int x;
-		int y;
-		int vX;
-		int vY;
-		QPixmap *pixMap1;
-		QPixmap *pixMap2;
-//		QTimer *timer;
-		int counter;
-
-//	public slots:
-
+		int x; /** position X */
+		int y; /** position Y */
+		int vX; /** velocity X */
+		int vY; /** velocity Y */
+		QPixmap *pixMap1; /** picture 1 */
+		int counter; /** counter */
 
 };
 

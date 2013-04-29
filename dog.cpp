@@ -2,10 +2,10 @@
 
 using namespace std;
 
+/** Constructor */
 Dog::Dog()
 {
 	pixMap1 = new QPixmap("images/dog.png");
-//	pixMap2 = new QPixmap("testmom2.png");
 	setPixmap(*pixMap1);
 	x = 0;
 	y = 350;
@@ -14,35 +14,29 @@ Dog::Dog()
 	setPos(x, y);
 	left = true;
 
-//	timer = new QTimer();
-//	timer->setInterval(50);
-//	connect(timer, SIGNAL(timeout()), this, SLOT(move()));
-
 }
 
+/** Destructor */
 Dog::~Dog()
 {
 
 }
 
-Dog::Dog(QPixmap *p, int nx, int ny) //: Thing ( p, nx, ny)
+/** Constructor */
+Dog::Dog(QPixmap *p, int nx, int ny) 
 {
 
 
 }
 
-/*
-void Dog::go()
-{
-	timer->start();
-}
-*/
 
+/** Returns type */
 int Dog::getType()
 {
 	return type;
 }
 
+/** Move */
 void Dog::move()
 {
 	//implement move

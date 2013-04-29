@@ -3,12 +3,13 @@
 
 using namespace std;
 
+/** Constructor */
 MainPlayer::MainPlayer()
 {
 
 }
 
-
+/** Constructor */
 MainPlayer::MainPlayer(GraphicsWindow *p, QString name)
 {
 	parent = p;
@@ -40,6 +41,7 @@ MainPlayer::MainPlayer(GraphicsWindow *p, QString name)
 	connect(timer, SIGNAL(timeout()), this, SLOT(jump()));
 }
 
+/** Destructor */
 MainPlayer::~MainPlayer()
 {
 	timer->stop();
@@ -48,27 +50,32 @@ MainPlayer::~MainPlayer()
 	delete nameID;
 }
 
+/** Velocity Setter */
 void MainPlayer::setVelocity(double x, double y)
 {
 	velocityX = x;
 	velocityY = y;
 }
 
+/** starts timer to jump*/
 void MainPlayer::movejump()
 {
 	timer->start();
 }
 
+/** Nothing */
 void MainPlayer::setFloor()
 {
 	floor = positionY;
 }
 
+/** Nothing */
 void MainPlayer::resetFloor()
 {
 	floor = 300;
 }
 
+/** checks if jumping */
 void MainPlayer::jumpCheck()
 {
 if(positionY == floor)
@@ -79,6 +86,7 @@ if(positionY == floor)
 }
 }
 
+/** Velocity Setter */
 void MainPlayer::move(int x)
 {
 	if(parent->getTimer()->isActive())
@@ -90,8 +98,6 @@ void MainPlayer::move(int x)
 		}
 		if( ((positionX < 0) && x<0) || ((positionX > 700) && x>1) )
 		{
-	//		velocityX= -velocityX;
-	//		velocityY= -velocityY;
 			return;
 		}	
 			velocityX = x;
@@ -105,16 +111,19 @@ void MainPlayer::move(int x)
 	}
 }
 
+/** Velocity Setter*/
 void MainPlayer::setVelocityY(double y)
 {
 	velocityY = y;
 }
 
+/** Returns name */
 QString MainPlayer::getName()
 {
 	return name_;
 }
 
+/** jump */
 void MainPlayer::jump()
 {
 	if(parent->getTimer()->isActive())
@@ -130,8 +139,6 @@ void MainPlayer::jump()
 			if( (positionX < 0) || (positionX > 700) )
 			{
 				velocityX= -velocityX;
-		//		velocityY= -velocityY;
-		//		return;
 			}
 
 			accelY = 1;
@@ -151,6 +158,7 @@ void MainPlayer::jump()
 	}
 }
 
+/** Ducking */
 void MainPlayer::moveduck()
 {
 	ducking = true;
@@ -158,6 +166,7 @@ void MainPlayer::moveduck()
 
 }
 
+/** flinching */
 void MainPlayer::flinching()
 {
 	if(!flinch)

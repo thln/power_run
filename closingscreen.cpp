@@ -2,6 +2,7 @@
 
 using namespace std;
 
+/** Constructor */
 closingScreen::closingScreen()
 {
 	pixMap1 = new QPixmap("images/GameOver.png");
@@ -12,6 +13,7 @@ closingScreen::closingScreen()
 
 }
 
+/** Destructor */
 closingScreen::~closingScreen()
 {
 

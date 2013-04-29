@@ -20,8 +20,6 @@
 #include <QPixmap>
 #include <QString>
 #include <QImage>
-//#include <stdio.h>
-//#include <stdlib.h>
 #include "mainplayer.h"
 #include "thing.h"
 #include "mother.h"
@@ -31,7 +29,6 @@
 #include "dog.h"
 #include "closingscreen.h"
 #include "pausescreen.h"
-//#include "scorebox.h"
 
 using namespace std;
 
@@ -49,46 +46,43 @@ public:
     explicit GraphicsWindow(); /** Constructor */
     ~GraphicsWindow(); /** Destructor */
 	QGraphicsScene *getScene(); /** Scene Accessor*/
-	void setPlayer(QString name);
-	MainPlayer *getPlayer();
-	void deletePlayer();
+	void setPlayer(QString name); /** Makes a player */
+	MainPlayer *getPlayer(); /** Returns Player */
+	void deletePlayer(); /** Checks to delete player */
   	void show(); /** shows the scene*/
-    	void startgame();
-    	void pausegame();
-	bool isAlive;
-	QTimer *getTimer();
-	double getScore();
-	int getLife();
-	bool invincible;
-	bool batteryOn;
+    	void startgame(); /** Start game */
+    	void pausegame(); /** Pause game */
+	bool isAlive; /** checks if a player isAlive */
+	QTimer *getTimer(); /** returns timer */
+	double getScore(); /** returns score */
+	int getLife(); /** returns number of lives */
+	bool invincible; /** checks if in invincible mode */
+	bool batteryOn; /** checks if just got battery */
     
 private:
     QGraphicsScene *scene; /** What is being displayed */
     QGraphicsView *view; /** What is being displayed */
     QTimer *timer; /** A Timer */ 
     
-    MainPlayer *Player1;
- //   	Mother *test;
-    vector<Thing*> MyThings;
-    vector<QImage> MyBackground;
-    pauseScreen *pause;
-    //vector<scoreBox> MyScore;
+    MainPlayer *Player1; /** Main Player */
+    vector<Thing*> MyThings; /** Vector of things */
+    vector<QImage> MyBackground; /** to animate background */
+    pauseScreen *pause; /** the pause button */
 
    	QPushButton *buttonclick; /** Nothing */
    	int counter; /** Nothing */
-   	int index;
-   	int imageindex;
-   	double score;
-   	int lives;
-   	int lastcase;
-   	int flinchcount;
-   	int tempFloor;
-  // 	int counter;
+   	int index; /** a counter */
+   	int imageindex;/** a counter */
+   	double score;/** score */
+   	int lives;/** lives */
+   	int lastcase; /** no doubles */
+   	int flinchcount;/** a counter */
+   	int tempFloor;/** a counter */
 
 public slots:
     void handleTimer(); /** Nothing */
 	void clicker(); /** Nothing */
-	void update();
+	void update(); /** Moves everything and does the actions */
 
 };
 

@@ -2,6 +2,7 @@
 
 using namespace std;
 
+/** Constructor */
 pauseScreen::pauseScreen()
 {
 	pixMap1 = new QPixmap("images/Pause.png");
@@ -12,6 +13,7 @@ pauseScreen::pauseScreen()
 
 }
 
+/** Destructor */
 pauseScreen::~pauseScreen()
 {
 

@@ -5,32 +5,31 @@
 #include <QObject>
 #include <QTimer>
 
+/**
+	* This class is used to keep track of Mother.
+	* Inherits from Thing.
+	* @author Tam Henry Le Nguyen */
+
 class Mother : public Thing {
 	Q_OBJECT
 
 	public:
-		Mother();
-		Mother(QPixmap *p, int nx, int ny);
-		~Mother();
-//		void go();
-//		bool left;
-		void move();
-		int getType();
-		int type;
-		bool isOpen;	
+		Mother(); /** Constructor */
+		Mother(QPixmap *p, int nx, int ny); /** Constructor */
+		~Mother(); /** Destructor */
+		void move(); /** Move */
+		int getType(); /** returns type */ 
+		int type; /** the Type */
+		bool isOpen; /** Nothing */	
 	
 	private:
-		int x;
-		int y;
-		int vX;
-		int vY;
-		QPixmap *pixMap1;
-		QPixmap *pixMap2;
-//		QTimer *timer;
-		int counter;
-
-//	public slots:
-//		void move();
+		int x; /** position X */
+		int y; /** position Y */
+		int vX; /** velocity X */
+		int vY; /** velocity Y */
+		QPixmap *pixMap1; /** picture 1 */
+		QPixmap *pixMap2; /** picture 2 */
+		int counter; /** counter */
 
 };
 

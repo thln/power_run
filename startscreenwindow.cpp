@@ -1,5 +1,6 @@
 #include "startscreenwindow.h"
 
+/** Constructor */
 startScreenWindow::startScreenWindow()
 {
     scene = new QGraphicsScene();
@@ -13,6 +14,7 @@ startScreenWindow::startScreenWindow()
 
 }
 
+/** Destructor */
 startScreenWindow::~startScreenWindow()
 {
 	delete scene;

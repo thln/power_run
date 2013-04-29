@@ -69,26 +69,18 @@ GraphicsWindow::GraphicsWindow()  {
 	MyBackground.push_back(QImage("images/testbackground15.png"));
 	MyBackground.push_back(QImage("images/testbackground16.png"));
 	
-	
 
 	lives = 5;
 	score = 0;
 	flinchcount = 0;
 	batteryOn = false;
 
-//	MyScore.push_back(scoreBox(score));
-
-
-
 }
 
 /** Show
 	* Displays the graphicsWindow */
-void GraphicsWindow::show() {
-    //This is only called once by main. Timers don't start working until
-    //we call start
-	//timer->start();
-
+void GraphicsWindow::show() 
+{
     //This is how we get our view displayed.
     this->show();
 }
@@ -100,6 +92,7 @@ QGraphicsScene *GraphicsWindow::getScene()
 	return scene;
 }
 
+/** Makes a player */
 void GraphicsWindow::setPlayer(QString name)
 {
 	Player1 = new MainPlayer(this, name);
@@ -107,19 +100,14 @@ void GraphicsWindow::setPlayer(QString name)
 	isAlive = true;
 }
 
+/** Delete Player if necessary */
 void GraphicsWindow::deletePlayer()
 {
-	//	cout << "hi " << endl;
-	//checks if a "game" is happening
+
 	if(isAlive)
 	{
-	//	cout << "restarting" << endl;
 		timer->stop();
 		delete Player1;
-		for(unsigned int i=0; i<MyThings.size(); i++)
-		{
-			delete MyThings[i];
-		}   
 		
 			lives = 5;
 			score = 0;
@@ -132,9 +120,9 @@ void GraphicsWindow::deletePlayer()
 		
 		
 	}
-	//	cout << "hi " << endl;
 }
 
+/** Returns player */
 MainPlayer *GraphicsWindow::getPlayer()
 {
 	return Player1;
@@ -155,14 +143,11 @@ GraphicsWindow::~GraphicsWindow()
     delete scene;
 }
 
+/** Update everything */
 void GraphicsWindow::update()
 {
-	//time_t time1;
-	//time(time1);
 		srand(time(NULL)* counter);
-	//	srand(5000);
 		int num = rand() % index;
-	//	cout << num << endl;
 		switch(num) 
 		{
 			case 1:
@@ -171,8 +156,6 @@ void GraphicsWindow::update()
 				MyThings.push_back(new Mother);
 				scene->addItem(MyThings[MyThings.size()-1]);
 				}
-	//			MyThings[index]->move();
-	//			index++;
 				break;
 			case 2:
 				if(lastcase > 5)
@@ -180,8 +163,6 @@ void GraphicsWindow::update()
 				MyThings.push_back(new Father);
 				scene->addItem(MyThings[MyThings.size()-1]);
 				}
-	//			MyThings[index]->move();
-	//			index++;
 				break;
 			case 3:
 				if(lastcase > 5)
@@ -189,8 +170,6 @@ void GraphicsWindow::update()
 				MyThings.push_back(new battery);
 				scene->addItem(MyThings[MyThings.size()-1]);
 				}
-	//			MyThings[index]->move();
-	//			index++;
 				break;
 			case 4:
 				if(lastcase > 5)
@@ -198,21 +177,16 @@ void GraphicsWindow::update()
 				MyThings.push_back(new Door);
 				scene->addItem(MyThings[MyThings.size()-1]);
 				}
-	//			MyThings[index]->move();
-	//			index++;
 				break;
 			case 5:
 				MyThings.push_back(new Dog);
 				scene->addItem(MyThings[MyThings.size()-1]);
-	//			MyThings[index]->move();
-	//			index++;
 				break;
 			
 		}
 		lastcase = num;
 		for(unsigned int i=0; i<MyThings.size(); i++)
 		{
-	//			cout << "Hi" << endl;
 				MyThings[i]->move();	
 		}
 
@@ -309,9 +283,6 @@ void GraphicsWindow::update()
 
 
 	score += (3000/index); 
-//	MyScore.push_back(scoreBox(score));
-//	MyScore.pop();
-
 	if(lives == 0)
 	{
 		scene->addItem(new closingScreen);
@@ -319,23 +290,19 @@ void GraphicsWindow::update()
 	}
 }
 
+/** Start Game */
 void GraphicsWindow::startgame()
 {
-//	cout << "Error?" << endl;
 	index = 3000;
 	score = 0; 
 	lives = 5;
 
 	timer->start();
 
-//			cout << " Sick " << endl;
-//			test = new Mother;
-
-//	cout << "Error?" << endl;
-
 //	return;
 }
 
+/** pauses game */
 void GraphicsWindow::pausegame()
 {
 	if(lives != 0)
@@ -354,16 +321,19 @@ void GraphicsWindow::pausegame()
 	}
 }
 
+/** returns timer */
 QTimer *GraphicsWindow::getTimer()
 {
 	return timer;
 }
 
+/** returns score */
 double GraphicsWindow::getScore()
 {
 	return score;
 }
 
+/** returns lives */
 int GraphicsWindow::getLife()
 {
 	return lives;

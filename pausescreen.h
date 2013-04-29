@@ -4,18 +4,23 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+/**
+	* This class is used to keep track of pauseScreen.
+	* Inherits from QObject and QGraphicsPixmapItem.
+	* @author Tam Henry Le Nguyen */
+
 class pauseScreen : public QObject, public QGraphicsPixmapItem {
 	Q_OBJECT
 
 	public:
-		pauseScreen();
-		~pauseScreen();
+		pauseScreen(); /** Constructor */
+		~pauseScreen(); /** Destructor */
 
 	
 	private:
-		QPixmap *pixMap1;
-		int x;
-		int y;
+		QPixmap *pixMap1; /** Picture */
+		int x; /** position X */
+		int y; /** postion Y */
 
 };
 
