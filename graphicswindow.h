@@ -27,6 +27,7 @@
 #include "battery.h"
 #include "door.h"
 #include "dog.h"
+#include "anvil.h"
 #include "closingscreen.h"
 #include "pausescreen.h"
 
@@ -74,7 +75,7 @@ private:
     vector<QImage> MyBackground2; /** to animate background */
     pauseScreen *pause; /** the pause button */
 
-   	QPushButton *buttonclick; /** Nothing */
+   	QPushButton *buttonclick; /** Nothing */ 
    	int counter; /** Nothing */
    	int index; /** a counter */
    	unsigned int imageindex;/** a counter */

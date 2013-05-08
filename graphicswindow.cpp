@@ -187,7 +187,7 @@ void GraphicsWindow::update()
 
 	for(unsigned int i=0; i< MyThings.size(); i++)
 	{
-		if(MyThings[i]->pos().x()>850 || MyThings[i]->pos().x()<-100)
+		if(MyThings[i]->pos().x()>850 || MyThings[i]->pos().x()<-100 || MyThings[i]->pos().y()>1000)
 		{
 			scene->removeItem(MyThings[i]);
 			delete MyThings[i];
@@ -231,13 +231,23 @@ void GraphicsWindow::update()
 				MyThings.push_back(new Dog);
 				scene->addItem(MyThings[MyThings.size()-1]);
 				break;
+			case 6:
+				MyThings.push_back(new Anvil);
+				scene->addItem(MyThings[MyThings.size()-1]);
+				break;
 			
 		}
 		lastcase = num;
 		for(unsigned int i=0; i<MyThings.size(); i++)
 		{
 				MyThings[i]->move();	
-		}
+				if(MyThings[i]->getType() == 6 && MyThings[i]->isOpen == false)
+				{
+					MyThings[i]->setPos(Player1->getXPosition(), 10);
+					MyThings[i]->isOpen= true;
+//					cout << MyThings[i]->isOpen << endl;
+				}
+		} 
 
 	counter++;
 
@@ -358,6 +368,13 @@ void GraphicsWindow::update()
 				Player1->flinching();
 				invincible = true;
 			}		
+			//Anvil
+			if(item->getType() == 6)
+			{
+				lives--;
+				Player1->flinching();
+				invincible = true;
+			}
 		
 		}
 	}

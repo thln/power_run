@@ -53,3 +53,4 @@ void Dog::faster()
 	vY = vY*2;
 
 }
+

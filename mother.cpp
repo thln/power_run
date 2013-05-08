@@ -22,6 +22,7 @@ Mother::~Mother()
 	delete pixMap2;
 }
 
+
 /** Returns type */
 int Mother::getType()
 {

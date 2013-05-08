@@ -40,6 +40,7 @@ class MainPlayer : public QObject, public QGraphicsPixmapItem {
 		void flinching(); /** flinches */
 		void setFloor(); /** Nothing */
 		void resetFloor(); /** Nothing */
+		double getXPosition(); /** returns x Position */
 //		bool isAlive;
 	
 	private:

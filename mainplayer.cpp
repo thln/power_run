@@ -166,6 +166,12 @@ void MainPlayer::moveduck()
 
 }
 
+/** Ducking */
+double MainPlayer::getXPosition()
+{
+	return positionX;
+}
+
 /** flinching */
 void MainPlayer::flinching()
 {

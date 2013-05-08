@@ -1,25 +1,29 @@
-#ifndef MOTHER_H
-#define MOTHER_H
+#ifndef ANVIL_H
+#define ANVIL_H
 
 #include "thing.h"
 #include <QObject>
 #include <QTimer>
+#include <iostream>
 
 /**
-	* This class is used to keep track of Mother.
+	* This class is used to keep track of Anvil.
 	* Inherits from Thing.
 	* @author Tam Henry Le Nguyen */
 
-class Mother : public Thing {
+using namespace std;
+
+class Anvil : public Thing {
 	Q_OBJECT
 
 	public:
-		Mother(); /** Constructor */
-		~Mother(); /** Destructor */
+		Anvil(); /** Constructor */
+		~Anvil(); /** Destructor */
+		bool left; /** Nothing */
 		void move(); /** Move */
-		int getType(); /** returns type */ 
-		int type; /** the Type */
-		bool isOpen; /** Nothing */
+		int getType();	/** Returns type  */
+		int type; /** the type */
+		bool isOpen; /** Nothing */	
 		void faster(); /** Moves faster */
 	
 	private:
@@ -28,7 +32,6 @@ class Mother : public Thing {
 		int vX; /** velocity X */
 		int vY; /** velocity Y */
 		QPixmap *pixMap1; /** picture 1 */
-		QPixmap *pixMap2; /** picture 2 */
 		int counter; /** counter */
 
 };

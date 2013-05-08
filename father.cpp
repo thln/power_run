@@ -29,7 +29,6 @@ int Father::getType()
 	return type;
 }
 
-
 /** Move */
 void Father::move()
 {
