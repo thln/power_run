@@ -404,7 +404,11 @@ void GraphicsWindow::update()
 	if(lives == 0)
 	{
 		scene->addItem(new closingScreen);
-		timer->stop();	
+		timer->stop();
+		ofstream myfile;
+		myfile.open("highscores.txt");
+		myfile<< Player1->getName().toStdString() << " " << score << endl;
+		myfile.close();	
 	}
 }
 

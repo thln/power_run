@@ -30,6 +30,9 @@
 #include "anvil.h"
 #include "closingscreen.h"
 #include "pausescreen.h"
+#include <ostream>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
