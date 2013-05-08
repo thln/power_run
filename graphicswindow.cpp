@@ -69,12 +69,49 @@ GraphicsWindow::GraphicsWindow()  {
 	MyBackground.push_back(QImage("images/testbackground15.png"));
 	MyBackground.push_back(QImage("images/testbackground16.png"));
 	
+	MyBackground1.push_back(QImage("images/bathroombg1.png"));
+	MyBackground1.push_back(QImage("images/bathroombg2.png"));
+	MyBackground1.push_back(QImage("images/bathroombg3.png"));
+	MyBackground1.push_back(QImage("images/bathroombg4.png"));
+	MyBackground1.push_back(QImage("images/bathroombg5.png"));
+	MyBackground1.push_back(QImage("images/bathroombg6.png"));
+	MyBackground1.push_back(QImage("images/bathroombg7.png"));
+	MyBackground1.push_back(QImage("images/bathroombg8.png"));
+	MyBackground1.push_back(QImage("images/bathroombg9.png"));
+	MyBackground1.push_back(QImage("images/bathroombg10.png"));
+	MyBackground1.push_back(QImage("images/bathroombg11.png"));
+	MyBackground1.push_back(QImage("images/bathroombg12.png"));
+	MyBackground1.push_back(QImage("images/bathroombg13.png"));
+	MyBackground1.push_back(QImage("images/bathroombg14.png"));
+	MyBackground1.push_back(QImage("images/bathroombg15.png"));
+	MyBackground1.push_back(QImage("images/bathroombg16.png"));
+
+	MyBackground2.push_back(QImage("images/outsidebg1.png"));
+	MyBackground2.push_back(QImage("images/outsidebg2.png"));
+	MyBackground2.push_back(QImage("images/outsidebg3.png"));
+	MyBackground2.push_back(QImage("images/outsidebg4.png"));
+	MyBackground2.push_back(QImage("images/outsidebg5.png"));
+	MyBackground2.push_back(QImage("images/outsidebg6.png"));
+	MyBackground2.push_back(QImage("images/outsidebg7.png"));
+	MyBackground2.push_back(QImage("images/outsidebg8.png"));
+	MyBackground2.push_back(QImage("images/outsidebg9.png"));
+	MyBackground2.push_back(QImage("images/outsidebg10.png"));
+	MyBackground2.push_back(QImage("images/outsidebg11.png"));
+	MyBackground2.push_back(QImage("images/outsidebg12.png"));
+	MyBackground2.push_back(QImage("images/outsidebg13.png"));
+	MyBackground2.push_back(QImage("images/outsidebg14.png"));
+	MyBackground2.push_back(QImage("images/outsidebg15.png"));
+	MyBackground2.push_back(QImage("images/outsidebg16.png"));	
+	
+
 
 	lives = 5;
 	score = 0;
 	flinchcount = 0;
 	batteryOn = false;
 	doublespeed = false;
+	background1 = true;
+	background2 = false;
 
 }
 
@@ -147,6 +184,17 @@ GraphicsWindow::~GraphicsWindow()
 /** Update everything */
 void GraphicsWindow::update()
 {
+
+	for(unsigned int i=0; i< MyThings.size(); i++)
+	{
+		if(MyThings[i]->pos().x()>850 || MyThings[i]->pos().x()<-100)
+		{
+			scene->removeItem(MyThings[i]);
+			delete MyThings[i];
+			MyThings.erase(MyThings.begin()+i);
+		}
+	}
+
 		srand(time(NULL)* counter);
 		int num = rand() % index;
 		switch(num) 
@@ -211,13 +259,53 @@ void GraphicsWindow::update()
 
 	if(counter%10 == 0)
 	{
-		setBackgroundBrush(MyBackground[imageindex]);
-		setCacheMode(QGraphicsView::CacheBackground);
+	int scoreUP = score;
 	
-		imageindex++;
-		if( imageindex == MyBackground.size())
+		if(background1)
 		{
-			imageindex = 0;
+			setBackgroundBrush(MyBackground[imageindex]);
+			setCacheMode(QGraphicsView::CacheBackground);
+	
+			imageindex++;
+			if( imageindex == MyBackground.size())
+			{
+				imageindex = 0;
+			}
+			if(scoreUP>1000 && scoreUP%10000<100)
+			{
+				background1 = false;
+				background2 = true;
+			}
+		}
+		else if(background2)
+		{
+			setBackgroundBrush(MyBackground1[imageindex]);
+			setCacheMode(QGraphicsView::CacheBackground);
+	
+			imageindex++;
+			if( imageindex == MyBackground1.size())
+			{
+				imageindex = 0;
+			}
+			if(scoreUP>1000 && scoreUP%20000<100)
+			{
+				background2 = false;
+			}		
+		}
+		else
+		{
+			setBackgroundBrush(MyBackground2[imageindex]);
+			setCacheMode(QGraphicsView::CacheBackground);
+	
+			imageindex++;
+			if( imageindex == MyBackground2.size())
+			{
+				imageindex = 0;
+			}
+			if(scoreUP>1000 && scoreUP%30000<100)
+			{
+				background1 = true;
+			}
 		}
 	}	
 	

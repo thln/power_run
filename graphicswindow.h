@@ -59,6 +59,8 @@ public:
 	bool invincible; /** checks if in invincible mode */
 	bool batteryOn; /** checks if just got battery */
 	bool doublespeed; /** Checks if sped up already */
+	bool background1;
+	bool background2;
     
 private:
     QGraphicsScene *scene; /** What is being displayed */
@@ -68,6 +70,8 @@ private:
     MainPlayer *Player1; /** Main Player */
     vector<Thing*> MyThings; /** Vector of things */
     vector<QImage> MyBackground; /** to animate background */
+    vector<QImage> MyBackground1; /** to animate background */
+    vector<QImage> MyBackground2; /** to animate background */
     pauseScreen *pause; /** the pause button */
 
    	QPushButton *buttonclick; /** Nothing */

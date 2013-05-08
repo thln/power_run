@@ -20,6 +20,7 @@ MainWindow::MainWindow()
 	startscreen = new startScreenWindow;
 	setCentralWidget(startscreen);
 	startscreencheck = true;
+	setFixedSize(770, 560);
 //	gw = new GraphicsWindow;
 //	gw->setBackgroundBrush(QImage("images/testbackground.png"));
 //	gw->setCacheMode(QGraphicsView::CacheBackground);
