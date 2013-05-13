@@ -24,6 +24,8 @@ echo "doxygen config.txt"
 echo "./game_tamnguye"
 ```
 
+Check my website at tamhenrylenguyen.com and read the license!
+
 ### Screenshots -- [Optional]
 ![alt text]( images/PowerRunScreen1.png "example game play")
 ![alt text]( images/PowerRunScreen2.png "example game play")
